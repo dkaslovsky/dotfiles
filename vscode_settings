@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "go.autocompleteUnimportedPackages": true,
+    "go.formatTool": "gofmt",
+    "go.inferGopath": true
+}
