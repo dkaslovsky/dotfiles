@@ -12,5 +12,6 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "gofmt",
-    "go.inferGopath": true
+    "go.inferGopath": false,
+    "go.gopath": "~/Github/go"
 }
