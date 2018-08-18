@@ -12,10 +12,17 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+
 ######
 # Go #
 ######
 export GOPATH=$HOME/Github/go
+
+
+##########
+# Python #
+##########
+export PIP_REQUIRE_VIRTUALENV=true
 
 
 ##################
