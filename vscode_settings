@@ -1,6 +1,6 @@
 {
     "workbench.colorTheme": "Monokai",
-    "files.autoSave": "afterDelay",
+    "files.autoSave": "off",
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
