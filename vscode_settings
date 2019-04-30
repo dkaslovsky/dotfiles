@@ -15,5 +15,7 @@
     "go.formatTool": "gofmt",
     "go.inferGopath": false,
     "go.gopath": "~/Github/go",
-    "editor.rulers": [100]
+    "editor.rulers": [100],
+    "editor.minimap.enabled": false,
+    "workbench.settings.editor": "json"
 }
