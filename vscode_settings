@@ -14,5 +14,8 @@
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "goimports",
     "go.inferGopath": false,
-    "go.gopath": "~/Github/go"
+    "go.gopath": "~/Github/go",
+    "editor.rulers": [100],
+    "editor.minimap.enabled": false,
+    "workbench.settings.editor": "json"
 }
