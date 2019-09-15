@@ -19,6 +19,12 @@ fi
 export GOPATH=$HOME/Github/go
 
 
+#######
+# GPG #
+#######
+export GPG_TTY=$(tty)
+
+
 ##########
 # Python #
 ##########
