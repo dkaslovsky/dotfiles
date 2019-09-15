@@ -23,6 +23,13 @@ export GOPATH=$HOME/Github/go
 # GPG #
 #######
 export GPG_TTY=$(tty)
+alias glock='gpgconf --kill gpg-agent'
+
+
+##########
+# GOPASS #
+##########
+source /dev/stdin <<<"$(gopass completion bash)"
 
 
 ##########
