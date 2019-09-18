@@ -24,6 +24,7 @@ export GOPATH=$HOME/Github/go
 #######
 export GPG_TTY=$(tty)
 alias glock='gpgconf --kill gpg-agent'
+source ~/.gpg_funcs
 
 
 ##########
