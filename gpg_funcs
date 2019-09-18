@@ -1,0 +1,99 @@
+#!/bin/bash
+
+export GPG_TTY=$(tty)
+
+function encrypt() {
+	out="${1}.gpg"
+	tar -cf - $1 | gpg -c -o $out --cipher-algo AES256
+	gpgconf --kill gpg-agent
+}
+
+function decrypt() {
+	gpg -q -d $1 | tar -x -k
+	gpgconf --kill gpg-agent
+}
+
+function addenc() {
+
+
+	##############################################
+	# check valid inputs and paths to be created #
+	##############################################
+
+	file_to_add=$1
+	encrypted_input=$2
+
+	decrypted_dir=${encrypted_input%.*}
+	encrypted_input_renamed="${decrypted_name}_orig.gpg"
+	tmp_dir="DELETE_ME_$(date +%Y%m%d_%H%M%S)"
+
+	# check that encrypted input is .gpg
+	if [[ ${encrypted_input: -4} != ".gpg" ]]; then
+		echo "must provide encrypted file with .gpg extension"
+		return 1
+	fi
+	# check that decrypted_dir does not already exist
+	if [ -d $decrypted_dir ]; then
+		echo "destination for decryption [${decrypted_name}] already exists, exiting instead of overwriting"
+		return 1
+	fi
+	# check that encrypted_input_renamed does not already exist
+        if [ -f $encrypted_input_renamed ]; then
+                echo "destination for renamed original .gpg file [${encrypted_input_renamed}] already exists, exiting instead of overwriting"
+                return 1
+        fi
+	# check that tmp_dir does not already exist
+	if [ -d $tmp_dir ]; then
+		echo "temporary directory for decrypted files [${tmp_dir}] already exists, exiting"
+		return 1
+	fi
+
+
+	###########
+	# decrypt #
+	###########
+
+	decrypt $encrypted_input
+
+	# check return code from decryption
+        if [ $? -ne 0 ]; then
+                echo "failed to decrypt"
+                return 1
+        fi
+	# check that the decrypted directory now exists
+	if [ ! -d $decrypted_dir ]; then
+		echo "expected decrypted directory [${decrypted_dir}] not found, something went wrong, check directory contents"
+		return 1
+	fi
+
+
+	##################
+	# add to archive #
+	##################
+
+	# check that file_to_add is not already in decrypted_dir; if it is clean up and exit
+	if [ -e ${decrypted_dir}/${file_to_add} ]; then
+		echo "target to add [${file_to_add}] already exists in encrypted archive, exiting instead of overwriting"
+		return 1
+	fi
+
+	# move original encrypted file to new name
+	mv $encrypted_input $encrypted_input_renamed
+
+	# copy file_to_add into decrypted_dir
+	cp $file_to_add $decrypted_dir
+
+	# encrypt the directory with the added file
+	encrypt $decrypted_dir
+
+
+	############
+	# clean up #
+	############
+	mkdir $tmp_dir
+	mv $encrypted_input_renamed $decrypted_dir $file_to_add $tmp_dir
+	echo "Success! Decrypted data should be deleted: $tmp_dir"
+
+	gpgconf --kill gpg-agent
+}
+
