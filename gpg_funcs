@@ -77,11 +77,16 @@ function addenc() {
 		return 1
 	fi
 
-	# move original encrypted file to new name
-	mv $encrypted_input $encrypted_input_renamed
+        # copy file_to_add into decrypted_dir
+        cp $file_to_add $decrypted_dir
 
-	# copy file_to_add into decrypted_dir
-	cp $file_to_add $decrypted_dir
+
+	##############
+	# re-encrypt #
+	##############
+
+	# move original encrypted file to new name so that we can re-encrypt to the original name
+	mv $encrypted_input $encrypted_input_renamed
 
 	# encrypt the directory with the added file
 	encrypt $decrypted_dir
