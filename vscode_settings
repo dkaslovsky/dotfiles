@@ -18,5 +18,8 @@
     "editor.rulers": [100],
     "editor.minimap.enabled": false,
     "workbench.settings.editor": "json",
-    "workbench.settings.useSplitJSON": true
+    "workbench.settings.useSplitJSON": true,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "yapf"
 }
