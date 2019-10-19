@@ -1,0 +1,10 @@
+[style]
+based_on_style = facebook
+column_limit = 100
+spaces_before_comment = 2, 5, 10, 15, 20
+blank_line_before_nested_class_or_def = True
+split_complex_comprehension = True
+split_before_dot = True
+arithmetic_precedence_indication = True
+join_multiple_lines = True
+split_all_top_level_comma_separated_values = False
