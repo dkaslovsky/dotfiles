@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sdrive_bak_public() {
+	sudo rsync -va --progress /Volumes/Public/ /Volumes/SDRIVE_BAK\ \(USB\)/sdrive_backup/rsynced/
+}
+
+sdrive_bak_adk() {
+	sudo rsync -va --progress /Volumes/adk/ /Volumes/SDRIVE_BAK\ \(USB\)/sdrive_backup/rsynced/adk/
+}
