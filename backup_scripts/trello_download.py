@@ -2,8 +2,7 @@ import argparse
 import json
 import os
 from datetime import datetime
-
-import requests
+from urllib.request import urlopen
 
 
 API = 'https://api.trello.com/1/'
@@ -63,6 +62,12 @@ def get_board_url(key, token, board_id):
     ))
 
 
+def get_board_json(url):
+    with urlopen(url) as response:
+        payload = json.load(response)
+    return payload
+
+
 def get_file_name(board_name, board_id):
     time_format = '%Y-%m-%dT%H_%M_%S'
     now = datetime.now().strftime(time_format)
@@ -82,7 +87,7 @@ if __name__ == '__main__':
             print(f'Backing up board id {board_id}...')
         
         board_url = get_board_url(args.key, args.token, board_id)
-        board = requests.get(board_url).json()
+        board = get_board_json(board_url)
         
         outfile = get_file_name(board['name'], board_id)
         outpath = os.path.join(args.outdir, outfile)
