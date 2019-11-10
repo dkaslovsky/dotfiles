@@ -40,7 +40,7 @@ def get_url(args):
 def get_file_name(args):
     time_format = '%Y-%m-%dT%H_%M_%S'
     now = datetime.now().strftime(time_format)
-    return f'google_calendar_{args.user}_{now}.ics'
+    return f'google_calendar_{args.user}_time={now}.ics'
 
 
 if __name__ == '__main__':
@@ -61,6 +61,6 @@ if __name__ == '__main__':
     outpath = os.path.join(args.outdir, outfile)
     with open(outpath, 'wb') as fh:
         fh.write(data)
-    
+
     if args.verbose:
         print(f' ...wrote {outfile} to {args.outdir}')
