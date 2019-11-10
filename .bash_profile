@@ -46,6 +46,10 @@ source /dev/stdin <<<"$(gopass completion bash)"
 ##########
 export PIP_REQUIRE_VIRTUALENV=true
 
+# from python3.7 install, appears to not be needed
+#PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+#export PATH
+
 
 ##################
 # Command Prompt #
