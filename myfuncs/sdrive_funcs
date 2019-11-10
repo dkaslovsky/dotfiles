@@ -1,5 +1,3 @@
-#!/bin/bash
-
 sdrive_bak_public() {
 	sudo rsync -va --progress /Volumes/Public/ /Volumes/SDRIVE_BAK\ \(USB\)/sdrive_backup/rsynced/
 }

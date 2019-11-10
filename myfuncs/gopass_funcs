@@ -1,0 +1,13 @@
+# given absolute path to gopass secret, get and open the url in Chrome, copy password to clipboard
+gpopen() {
+	secret_path=$(echo $1 | sed "s|$GP||" | sed "s/.gpg//")
+	url=$(gopass $secret_path | head -n 2 | tail -n 1 | sed "s/url: //")
+	open -na "Google Chrome" --args --new-window $url
+	gopass -c $secret_path
+}
+
+# pipe the result of gopass <secret> to gpshow to show all but the first line of gopass secret
+gpshow() {
+	tail -n +2 $1
+	echo ""
+}
