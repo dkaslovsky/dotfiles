@@ -4,7 +4,7 @@ from datetime import datetime
 from urllib.request import urlopen
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
@@ -33,11 +33,11 @@ def parse_args():
     return args
 
 
-def get_url(args):
+def get_url(args: argparse.Namespace) -> str:
     return f'https://www.google.com/calendar/ical/{args.user}/private-{args.key}/basic.ics'
 
 
-def get_file_name(args):
+def get_file_name(args: argparse.Namespace) -> str:
     time_format = '%Y-%m-%dT%H_%M_%S'
     now = datetime.now().strftime(time_format)
     return f'google_calendar_{args.user}_time={now}.ics'
