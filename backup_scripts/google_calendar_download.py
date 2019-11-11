@@ -3,6 +3,8 @@ import os
 from datetime import datetime
 from urllib.request import urlopen
 
+from time_format import TIME_FORMAT
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -38,8 +40,7 @@ def get_url(args: argparse.Namespace) -> str:
 
 
 def get_file_name(args: argparse.Namespace) -> str:
-    time_format = '%Y-%m-%dT%H_%M_%S'
-    now = datetime.now().strftime(time_format)
+    now = datetime.now().strftime(TIME_FORMAT)
     return f'google_calendar_{args.user}_time={now}.ics'
 
 

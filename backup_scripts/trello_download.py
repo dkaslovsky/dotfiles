@@ -5,6 +5,8 @@ from datetime import datetime
 from typing import Dict
 from urllib.request import urlopen
 
+from time_format import TIME_FORMAT
+
 
 API = 'https://api.trello.com/1/'
 
@@ -46,8 +48,8 @@ def parse_args() -> argparse.Namespace:
     return args
 
 
-def get_board_url(key: str, token: str, board_id: str) -> str:
-    auth = f'key={key}&token={token}'
+def get_board_url(args: argparse.Namespace, board_id: str) -> str:
+    auth = f'key={args.key}&token={args.token}'
     return ''.join((
         f'{API}boards/{board_id}?{auth}&',
         'actions=all&',
@@ -70,8 +72,7 @@ def get_board_json(url: str) -> Dict:
 
 
 def get_file_name(board_name: str, board_id: str) -> str:
-    time_format = '%Y-%m-%dT%H_%M_%S'
-    now = datetime.now().strftime(time_format)
+    now = datetime.now().strftime(TIME_FORMAT)
     return f'trello_board={board_name}_id={board_id}_time={now}.json'
 
 
@@ -87,7 +88,7 @@ if __name__ == '__main__':
         if args.verbose:
             print(f'Backing up board id {board_id}...')
 
-        board_url = get_board_url(args.key, args.token, board_id)
+        board_url = get_board_url(args, board_id)
         board = get_board_json(board_url)
 
         outfile = get_file_name(board['name'], board_id)

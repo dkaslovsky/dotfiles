@@ -4,6 +4,8 @@ import sys
 from datetime import datetime, timedelta
 from typing import Iterator, List
 
+from time_format import TIME_FORMAT
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -30,10 +32,9 @@ def parse_args() -> argparse.Namespace:
 
 
 def parse_time(file_name: str) -> datetime:
-    time_format = '%Y-%m-%dT%H_%M_%S'
     no_ext = os.path.splitext(file_name)[0]  # remove extension
     time_str = no_ext.split('time=')[-1]
-    return datetime.strptime(time_str, time_format)
+    return datetime.strptime(time_str, TIME_FORMAT)
 
 
 def get_objs_to_prune(full_path: str, now: datetime, time_thresh: timedelta) -> Iterator[str]:
@@ -81,7 +82,7 @@ if __name__ == '__main__':
 
     print(f'About to prune {len(to_prune)} files:')
     print('\n'.join(to_prune))
-    if confirm_delete():
-        delete_files(to_prune)
-    else:
+    if not confirm_delete():
         print('Aborted')
+        sys.exit()
+    delete_files(to_prune)
