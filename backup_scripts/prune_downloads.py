@@ -40,10 +40,7 @@ def parse_time(file_name: str) -> datetime:
 def get_objs_to_prune(full_path: str, now: datetime, time_thresh: timedelta) -> Iterator[str]:
 
     def should_prune(file_name: str, now: datetime, time_thresh: timedelta) -> bool:
-        time_format = '%Y-%m-%dT%H_%M_%S'
-        no_ext = os.path.splitext(file_name)[0]  # remove extension
-        time_str = no_ext.split('time=')[-1]
-        ts = datetime.strptime(time_str, time_format)
+        ts = parse_time(file_name)
         return now - ts > time_thresh
 
     for obj in os.listdir(full_path):
