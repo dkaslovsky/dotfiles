@@ -1,0 +1,8 @@
+newvenv() {
+	py=$1
+	venv_name=$2
+	$py -m venv $venv_name
+	source $venv_name/bin/activate
+	pip install --upgrade pip
+	pip install -r ~/dotfiles/myfuncs/python_venv/requirements-dev.txt
+}

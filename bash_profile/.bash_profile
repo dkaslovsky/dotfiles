@@ -64,4 +64,5 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ##################
 . ~/dotfiles/myfuncs/gopass_funcs
 . ~/dotfiles/myfuncs/gpg_funcs
+. ~/dotfiles/myfuncs/python_venv/newvenv
 . ~/dotfiles/myfuncs/sdrive_funcs
