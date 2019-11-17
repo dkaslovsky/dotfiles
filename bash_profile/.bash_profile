@@ -1,6 +1,6 @@
 
 ###########
-# aliases #
+# Aliases #
 ###########
 alias ls='ls -lhFG'
 alias lsa='ls -lahFG'
@@ -17,9 +17,7 @@ parse_git_branch() {
 }
 
 # Git completion
-if [ -f ~/dotfiles/git/.git-completion.bash ]; then
-  . ~/dotfiles/git/.git-completion.bash
-fi
+. ~/dotfiles/myfuncs/git/.git-completion.bash
 
 
 ######
@@ -35,7 +33,7 @@ export GPG_TTY=$(tty)
 
 
 ##########
-# GOPASS #
+# Gopass #
 ##########
 export GP=~/.password-store/
 source /dev/stdin <<<"$(gopass completion bash)"
@@ -62,6 +60,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ##################
 # Source myfuncs #
 ##################
+. ~/dotfiles/myfuncs/git/git_funcs
 . ~/dotfiles/myfuncs/gopass_funcs
 . ~/dotfiles/myfuncs/gpg_funcs
 . ~/dotfiles/myfuncs/python_venv/newvenv
