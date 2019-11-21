@@ -60,6 +60,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ##################
 # Source myfuncs #
 ##################
+. ~/dotfiles/myfuncs/cmdline_funcs
 . ~/dotfiles/myfuncs/git/git_funcs
 . ~/dotfiles/myfuncs/gopass_funcs
 . ~/dotfiles/myfuncs/gpg_funcs
