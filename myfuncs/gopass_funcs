@@ -11,3 +11,8 @@ gpshow() {
 	tail -n +2 $1
 	echo ""
 }
+
+# list the top level gopass directories
+gpls() {
+	 gopass list -f | sed 's/\/.*//' | sort | uniq
+}
