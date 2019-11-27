@@ -16,3 +16,9 @@ gpshow() {
 gpls() {
 	 gopass list -f | sed 's/\/.*//' | sort | uniq
 }
+
+# find path to entry
+gpfind() {
+	gopass ls -f | grep -i $1
+}
+
