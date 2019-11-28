@@ -26,48 +26,35 @@ gpget() {
 	echo "$secret_path"
 }
 
-# show all but the password of a secret
-gpshow() {
-	echo ""
-	gopass show $1 | tail -n +2
-	echo ""
-	echo ""
-}
 
 # list the top level gopass directories
-gpls() {
+gptoplevel() {
 	 gopass list -f | sed 's/\/.*//' | sort | uniq
 }
+
 
 # find path to entry
 gpfind() {
 	gopass ls -f | grep -i $1
 }
 
+
+# show all but the password of a secret
+gpshow() {
+
+        secret_path=$(gpget $1 $2) || { echo "$secret_path"; return 1; }
+
+        echo ""
+        gopass show "$secret_path" | tail -n +2
+        echo ""
+        echo ""
+}
+
+
 # grep for secret, open in Chrome, copy password to clipboard
 gpopen() {
 
-	if [ -z $1 ]; then
-		echo "Pass one or two arguments"
-		return 1
-	fi
-
-	# grep for path to secret
-	secret_path=$(gpfind $1)
-	if [ ! -z $2 ]; then
-		secret_path=$(echo "$secret_path" | grep -i $2)
-	fi
-
-	# check that exactly one result was returned
-	if [ -z "$secret_path" ]; then
-		echo "No secrets matched"
-		return 1
-	fi
-	if [ $(echo "$secret_path" | wc -l) -gt 1 ]; then
-		echo "More than one secret matched:"
-		echo "$secret_path"
-		return 1
-	fi
+	secret_path=$(gpget $1 $2) || { echo "$secret_path"; return 1; }
 
 	echo "Opening $secret_path"
 
