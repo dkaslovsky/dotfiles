@@ -1,3 +1,31 @@
+# get path to secret via grep
+gpget() {
+
+        if [ -z $1 ]; then
+                echo "Must pass one or two grep arguments"
+                return 1
+        fi
+
+        # grep for path to secret
+        secret_path=$(gpfind $1)
+        if [ ! -z $2 ]; then
+                secret_path=$(echo "$secret_path" | grep -i $2)
+        fi
+
+        # check that exactly one result was returned
+        if [ -z "$secret_path" ]; then
+                echo "No secrets matched"
+                return 1
+        fi
+        if [ $(echo "$secret_path" | wc -l) -gt 1 ]; then
+                echo "More than one secret matched:"
+                echo "$secret_path"
+                return 1
+        fi
+	
+	echo "$secret_path"
+}
+
 # show all but the password of a secret
 gpshow() {
 	echo ""
