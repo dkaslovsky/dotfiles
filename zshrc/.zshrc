@@ -100,3 +100,6 @@ bindkey "^R" history-incremental-search-backward
 bindkey "^E" end-of-line
 bindkey "^A" beginning-of-line
 
+# in-place delete
+bindkey '^[[3~'  delete-char
+
