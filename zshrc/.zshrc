@@ -10,15 +10,15 @@ alias glock='gpgconf --kill gpg-agent'
 #######
 # Git #
 #######
-# Git branch in prompt
-#parse_git_branch() {
-#    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-#}
-git_branch() {
-        printf "[%s]" "$(git branch 2>/dev/null | grep \* | awk -F '\\* ' '{$0=$2}1')"
-}
-
 export EDITOR='vim'
+
+# Git branch in prompt
+git_branch() {
+	branch="$(git branch 2>/dev/null | grep \* | awk -F '\\* ' '{$0=$2}1')"
+	if [ ! -z "$branch" ]; then	
+		printf "[%s]" "$branch"
+	fi
+}
 
 
 ######
@@ -43,7 +43,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 # Command Prompt #
 ##################
 setopt PROMPT_SUBST
-PROMPT='%(?^%F{green}[%n@%m] [%2~] $(git_branch)%f^%F{red}[%n@%m] [%2~] $(git_branch)%f)$ '
+PROMPT='%(?^%F{cyan}[%n@%m] [%2~] $(git_branch)%f^%F{red}[%n@%m] [%2~] $(git_branch)%f)$ '
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
