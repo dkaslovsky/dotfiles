@@ -16,7 +16,7 @@ export EDITOR='vim'
 git_branch() {
 	branch="$(git branch 2>/dev/null | grep \* | awk -F '\\* ' '{$0=$2}1')"
 	if [ ! -z "$branch" ]; then	
-		printf "[%s]" "$branch"
+		printf " [%s]" "$branch"
 	fi
 }
 
@@ -43,7 +43,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 # Command Prompt #
 ##################
 setopt PROMPT_SUBST
-PROMPT='%(?^%F{cyan}[%n@%m] [%2~] $(git_branch)%f^%F{red}[%n@%m] [%2~] $(git_branch)%f) $ '
+PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~] $(git_branch)%f) $ '
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
