@@ -2,5 +2,6 @@ black
 green
 ipython
 isort
+mypy
 pylint
 yapf
