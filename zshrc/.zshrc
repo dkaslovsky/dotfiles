@@ -43,7 +43,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 # Command Prompt #
 ##################
 setopt PROMPT_SUBST
-PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~] $(git_branch)%f) $ '
+PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~]$(git_branch)%f) $ '
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
