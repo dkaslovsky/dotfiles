@@ -22,12 +22,12 @@
     "python.formatting.provider": "none",
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
-        "--max-line-len=100",
+        "--max-line-len=100"
     ],
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": false,
     "python.linting.pylintUseMinimalCheckers": false,
     "workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
-    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.useSplitJSON": true
 }
