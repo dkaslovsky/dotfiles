@@ -1,5 +1,10 @@
 {
-    "workbench.colorTheme": "Monokai",
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.rulers": [
+        100
+    ],
     "files.autoSave": "off",
     "files.exclude": {
         "**/.git": true,
@@ -10,16 +15,19 @@
         "**/*.pyc": true,
         "**/__pycache__": true
     },
-    "editor.multiCursorModifier": "ctrlCmd",
     "go.autocompleteUnimportedPackages": true,
     "go.formatTool": "goimports",
-    "go.inferGopath": false,
     "go.gopath": "~/Github/go",
-    "editor.rulers": [100],
-    "editor.minimap.enabled": false,
+    "go.inferGopath": false,
+    "python.formatting.provider": "none",
+    "python.linting.enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-len=100",
+    ],
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pylintUseMinimalCheckers": false,
+    "workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
-    "python.linting.pylintUseMinimalCheckers": false,
-    "editor.formatOnSave": true,
-    "python.formatting.provider": "yapf"
 }
