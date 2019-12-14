@@ -11,11 +11,16 @@ pycheck() {
     fi
 
     local cur_dir=$(pwd)
+    
+    # check if inside active venv
+    which python | grep venv | grep $cur_dir > /dev/null \
+      || { echo "venv is not active or is not in expected top-level directory"; return 1; }
+
 
     run_isort \
-    && run_green \
-    && run_flake8 \
-    && run_mypy
+      && run_green \
+      && run_mypy \
+      && run_flake8
 }
 
 check_installed() {
@@ -24,7 +29,7 @@ check_installed() {
 
 run_isort() {
     check_installed isort || return 1
-    echo "---> isort"
+    echo -n "---> isort"
     local isort_output=$(
         isort \
         -rc \
@@ -36,31 +41,56 @@ run_isort() {
         --virtual-env=venv \
         $cur_dir
     )
-    echo $isort_output | sed 's/.*Skipped.*files//' | sed '/^$/d'
+    local output=$(echo $isort_output | sed 's/.*Skipped.*files//' | sed '/^$/d')
+    if [ -z $output ]; then
+        echo "\xE2\x9C\x94"
+        return 0
+    fi
+    echo ""    
+    echo $output
 }
 
 run_green() {
     check_installed green
-    echo "---> green"
-    green_output="$(green)" || { echo $green_output; unset green_output; return 1; }
+    echo -n "---> green"
+    green_output="$(green)" || { echo ""; echo $green_output; unset green_output; return 1; }
+    echo "\xE2\x9C\x94"
     unset green_output
 }
 
 run_flake8() {
     check_installed flake8
-    echo "---> flake8"
-    flake8 \
-        --max-line-len=100 \
-        --exclude=venv \
-        $cur_dir
+    echo -n "---> flake8"
+    local output=$(
+        flake8 \
+          --max-line-len=100 \
+          --exclude=venv \
+          $cur_dir
+    )
+    if [ -z $output ]; then
+        echo "\xE2\x9C\x94"
+        return 0
+    fi
+    echo ""
+    echo $output
+    return 1
 }
 
 run_mypy() {
     check_installed mypy
-    echo "---> mypy"
-    mypy \
-        --ignore-missing-imports \
-        --no-error-summary \
-        $cur_dir
+    echo -n "---> mypy"
+    output=$(
+        mypy \
+          --ignore-missing-imports \
+          --no-error-summary \
+          $cur_dir
+    )
+    if [ -z $output ]; then
+        echo "\xE2\x9C\x94"
+        return 0
+    fi
+    echo ""
+    echo $output
+    return 1
 }
 
