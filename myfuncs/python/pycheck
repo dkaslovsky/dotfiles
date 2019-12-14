@@ -1,5 +1,8 @@
 # run checks on python code (should be run from top level dir of a project in an activated venv)
 
+local GRN='\e[32m'
+local NC='\e[0m' # No Color
+
 pycheck() {
 
     # ensure a venv exists; this also is a weak test
@@ -43,7 +46,7 @@ run_isort() {
     )
     local output=$(echo $isort_output | sed 's/.*Skipped.*files//' | sed '/^$/d')
     if [ -z $output ]; then
-        echo "\xE2\x9C\x94"
+        echo -e "${GRN}\xE2\x9C\x94${NC}"
         return 0
     fi
     echo ""    
@@ -54,7 +57,7 @@ run_green() {
     check_installed green
     echo -n "---> green"
     green_output="$(green)" || { echo ""; echo $green_output; unset green_output; return 1; }
-    echo "\xE2\x9C\x94"
+    echo -e "${GRN}\xE2\x9C\x94${NC}"
     unset green_output
 }
 
@@ -68,7 +71,7 @@ run_flake8() {
           $cur_dir
     )
     if [ -z $output ]; then
-        echo "\xE2\x9C\x94"
+        echo -e "${GRN}\xE2\x9C\x94${NC}"
         return 0
     fi
     echo ""
@@ -86,7 +89,7 @@ run_mypy() {
           $cur_dir
     )
     if [ -z $output ]; then
-        echo "\xE2\x9C\x94"
+        echo -e "${GRN}\xE2\x9C\x94${NC}"
         return 0
     fi
     echo ""
