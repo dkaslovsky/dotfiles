@@ -1,7 +1,7 @@
 export GPG_TTY=$(tty)
 
 function encrypt() {
-	out="${1}.gpg"
+	local out="${1}.gpg"
 	tar -cf - $1 | gpg -c -o $out --cipher-algo AES256
 	gpgconf --kill gpg-agent
 }
@@ -18,12 +18,12 @@ function addenc() {
 	# check valid inputs and paths to be created #
 	##############################################
 
-	file_to_add=$1
-	encrypted_input=$2
+	local file_to_add=$1
+	local encrypted_input=$2
 
-	decrypted_dir=${encrypted_input%.*}
-	encrypted_input_renamed="${decrypted_name}_orig.gpg"
-	tmp_dir="DELETE_ME_$(date +%Y%m%d_%H%M%S)"
+	local decrypted_dir=${encrypted_input%.*}
+	local encrypted_input_renamed="${decrypted_name}_orig.gpg"
+	local tmp_dir="DELETE_ME_$(date +%Y%m%d_%H%M%S)"
 
 	# check that encrypted input is .gpg
 	if [[ ${encrypted_input: -4} != ".gpg" ]]; then
