@@ -18,7 +18,12 @@ pycheck() {
     && run_mypy
 }
 
+check_installed() {
+    which $1 > /dev/null || { echo "$1 not installed"; return 1 }
+}
+
 run_isort() {
+    check_installed isort || return 1
     echo "---> isort"
     local isort_output=$(
         isort \
@@ -35,12 +40,14 @@ run_isort() {
 }
 
 run_green() {
+    check_installed green
     echo "---> green"
     green_output="$(green)" || { echo $green_output; unset green_output; return 1; }
     unset green_output
 }
 
 run_flake8() {
+    check_installed flake8
     echo "---> flake8"
     flake8 \
         --max-line-len=100 \
@@ -49,6 +56,7 @@ run_flake8() {
 }
 
 run_mypy() {
+    check_installed mypy
     echo "---> mypy"
     mypy \
         --ignore-missing-imports \
