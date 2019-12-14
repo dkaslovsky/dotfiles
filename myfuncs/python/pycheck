@@ -1,0 +1,58 @@
+# run checks on python code (should be run from top level dir of a project in an activated venv)
+
+pycheck() {
+
+    # ensure a venv exists; this also is a weak test
+    # for whether we are running at the top level cur_dir
+    # at least given my usual conventions
+    if [[ ! -d venv/ ]]; then
+        echo "no venv found...exiting"
+        return 1
+    fi
+
+    local cur_dir=$(pwd)
+
+    run_isort \
+    && run_green \
+    && run_flake8 \
+    && run_mypy
+}
+
+run_isort() {
+    echo "---> isort"
+    local isort_output=$(
+        isort \
+        -rc \
+        -y \
+        --trailing-comma \
+        --order-by-type \
+        --multi-line=3 \
+        --skip=venv \
+        --virtual-env=venv \
+        $cur_dir
+    )
+    echo $isort_output | sed 's/.*Skipped.*files//' | sed '/^$/d'
+}
+
+run_green() {
+    echo "---> green"
+    green_output="$(green)" || { echo $green_output; unset green_output; return 1}
+    unset green_output
+}
+
+run_flake8() {
+    echo "---> flake8"
+    flake8 \
+        --max-line-len=100 \
+        --exclude=venv \
+        $cur_dir
+}
+
+run_mypy() {
+    echo "---> mypy"
+    mypy \
+        --ignore-missing-imports \
+        --no-error-summary \
+        $cur_dir
+}
+
