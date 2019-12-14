@@ -36,7 +36,7 @@ run_isort() {
 
 run_green() {
     echo "---> green"
-    green_output="$(green)" || { echo $green_output; unset green_output; return 1}
+    green_output="$(green)" || { echo $green_output; unset green_output; return 1; }
     unset green_output
 }
 

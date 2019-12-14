@@ -7,9 +7,9 @@ gpget() {
         fi
 
         # grep for path to secret
-        secret_path=$(gpfind $1)
+        local secret_path=$(gpfind $1)
         if [ ! -z $2 ]; then
-                secret_path=$(echo "$secret_path" | grep -i $2)
+                local secret_path=$(echo "$secret_path" | grep -i $2)
         fi
 
         # check that exactly one result was returned
@@ -42,28 +42,31 @@ gpfind() {
 # show all but the password of a secret
 gpshow() {
 
-        secret_path=$(gpget $1 $2) || { echo "$secret_path"; return 1; }
+        secret_path=$(gpget $1 $2) || { echo "$secret_path"; unset secret_path; return 1; }
 
         echo ""
         gopass show "$secret_path" | tail -n +2
         echo ""
         echo ""
+	unset secret_path
 }
 
 
 # grep for secret, open in Chrome, copy password to clipboard
 gpopen() {
 
-	secret_path=$(gpget $1 $2) || { echo "$secret_path"; return 1; }
+	secret_path=$(gpget $1 $2) || { echo "$secret_path"; unset secret_path; return 1; }
 
 	echo "Opening $secret_path"
 
 	# open url
-	url=$(gopass $secret_path | head -n 2 | tail -n 1 | sed "s/url: //")
+	local url=$(gopass $secret_path | head -n 2 | tail -n 1 | sed "s/url: //")
 	open -na "Google Chrome" --args --new-window $url
 	
 	# copy password to clipboard
 	gopass -c $secret_path
+
+	unset secret_path
 
 }
 
