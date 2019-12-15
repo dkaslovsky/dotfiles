@@ -70,3 +70,11 @@ gpopen() {
 
 }
 
+# grep for secret and copy password to clipboard
+gpcp() {
+
+        secret_path=$(gpget $1 $2) || { echo "$secret_path"; unset secret_path; return 1; }
+        gopass -c $secret_path
+        unset secret_path
+
+}
