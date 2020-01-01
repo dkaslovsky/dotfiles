@@ -81,8 +81,8 @@ setopt HIST_VERIFY
 setopt GLOB_COMPLETE
 
 # enable cmdline correction
-setopt CORRECT
-setopt CORRECT_ALL
+#setopt CORRECT
+#setopt CORRECT_ALL
 
 # enable cmdline completion
 autoload -U compinit && compinit
