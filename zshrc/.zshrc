@@ -59,6 +59,10 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 . ~/dotfiles/myfuncs/python/pycheck
 . ~/dotfiles/myfuncs/sdrive_funcs
 
+if [[ -d ~/dotfiles/work ]]; then
+	. ~/dotfiles/work/work
+fi
+
 
 ############
 # ZSH OPTS #
