@@ -53,7 +53,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ##################
 . ~/dotfiles/myfuncs/cmdline_funcs
 . ~/dotfiles/myfuncs/git/git_funcs
-. ~/dotfiles/myfuncs/gopass_funcs
+. ~/dotfiles/myfuncs/gopass/gopass_funcs_190
 . ~/dotfiles/myfuncs/gpg_funcs
 . ~/dotfiles/myfuncs/python/newvenv
 . ~/dotfiles/myfuncs/python/pycheck
@@ -62,6 +62,12 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
 fi
+
+
+########
+# PATH #
+########
+export PATH=$HOME/bin:$PATH
 
 
 ############
