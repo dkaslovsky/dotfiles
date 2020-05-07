@@ -12,14 +12,6 @@ alias glock='gpgconf --kill gpg-agent'
 #######
 export EDITOR='vim'
 
-# Git branch in prompt
-git_branch() {
-	branch="$(git branch 2>/dev/null | grep \* | awk -F '\\* ' '{$0=$2}1')"
-	if [ ! -z "$branch" ]; then	
-		printf " [%s]" "$branch"
-	fi
-}
-
 
 ######
 # Go #
@@ -40,15 +32,6 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 
 ##################
-# Command Prompt #
-##################
-setopt PROMPT_SUBST
-PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~]$(git_branch)%f) $ '
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-
-##################
 # Source myfuncs #
 ##################
 . ~/dotfiles/myfuncs/cmdline_funcs
@@ -62,6 +45,15 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
 fi
+
+
+##################
+# Command Prompt #
+##################
+setopt PROMPT_SUBST
+PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~]$(git_branch)%f) $ '
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
 ########
