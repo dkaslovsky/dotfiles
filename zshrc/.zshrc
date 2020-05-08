@@ -32,6 +32,12 @@ export GPG_TTY=$(tty)
 alias glock='gpgconf --kill gpg-agent'
 
 
+#######
+# k8s #
+#######
+alias kc='kubectl'
+
+
 ##########
 # Python #
 ##########
