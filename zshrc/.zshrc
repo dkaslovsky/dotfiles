@@ -1,28 +1,35 @@
-###########
-# Aliases #
-###########
+######
+# ls #
+######
 alias ls='ls -lhFG'
 alias lsa='ls -lahFG'
-alias gits='git status'
-alias glock='gpgconf --kill gpg-agent'
 
 
 #######
 # Git #
 #######
 export EDITOR='vim'
+alias gits='git status'
 
 
 ######
 # Go #
 ######
 export GOPATH=$HOME/Github/go
+alias cdgo="cd ${GOPATH}"
+
+
+##########
+# Gopass #
+##########
+gp_version='190'
 
 
 #######
 # GPG #
 #######
 export GPG_TTY=$(tty)
+alias glock='gpgconf --kill gpg-agent'
 
 
 ##########
@@ -36,7 +43,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 ##################
 . ~/dotfiles/myfuncs/cmdline_funcs
 . ~/dotfiles/myfuncs/git/git_funcs
-. ~/dotfiles/myfuncs/gopass/gopass_funcs_190
+. ~/dotfiles/myfuncs/gopass/gopass_funcs_"${gp_version}"
 . ~/dotfiles/myfuncs/gpg_funcs
 . ~/dotfiles/myfuncs/python/newvenv
 . ~/dotfiles/myfuncs/python/pycheck
