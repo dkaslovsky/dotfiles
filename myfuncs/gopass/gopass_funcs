@@ -92,20 +92,21 @@ gpsetconf() {
 
 	echo "about to set gopass config..."
 	while read -r fileline; do
-        	line=($fileline)
-        	echo "${line[0]} ${line[1]}"
+        	echo $fileline
 	done < ${filename}
 
+	echo ""
 	vared -p 'confirm [y/N]: ' -c yn
 	if [ $yn != 'y' ]; then
         	return 1
 	fi
 
 	while read -r fileline; do
-        	line=($fileline)
-        	gopass config ${line[0]} ${line[1]} > /dev/null
+		line=($fileline)
+		gopass config $line[0] $(echo $line[1] | tr '\n' ' ') > /dev/null
 	done < ${filename}
 
-	echo "gopass config set..."
+	echo "done\n"
+	echo "---new gopass config---"
 	gopass config
 }
