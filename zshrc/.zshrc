@@ -19,6 +19,12 @@ export GOPATH=$HOME/Github/go
 alias cdgo="cd ${GOPATH}"
 
 
+##########
+# Gopass #
+##########
+export _gopass_custom_config=$HOME/dotfiles/myfuncs/gopass/gopass_config
+
+
 #######
 # GPG #
 #######

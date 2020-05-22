@@ -84,7 +84,7 @@ gpcp() {
 
 # set gopass config from values specified in config file
 gpsetconf() {
-	filename="`pwd`/gopass_config"
+	filename=$_gopass_custom_config
 	if [ ! -f $filename ]; then
 		echo "gopass config file [${filename}] not found"
 		return 1
