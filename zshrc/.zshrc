@@ -19,12 +19,6 @@ export GOPATH=$HOME/Github/go
 alias cdgo="cd ${GOPATH}"
 
 
-##########
-# Gopass #
-##########
-gp_version='190'
-
-
 #######
 # GPG #
 #######
@@ -49,7 +43,7 @@ export PIP_REQUIRE_VIRTUALENV=true
 ##################
 . ~/dotfiles/myfuncs/cmdline_funcs
 . ~/dotfiles/myfuncs/git/git_funcs
-. ~/dotfiles/myfuncs/gopass/gopass_funcs_"${gp_version}"
+. ~/dotfiles/myfuncs/gopass/gopass_funcs
 . ~/dotfiles/myfuncs/gpg_funcs
 . ~/dotfiles/myfuncs/python/newvenv
 . ~/dotfiles/myfuncs/python/pycheck
