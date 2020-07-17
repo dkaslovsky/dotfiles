@@ -44,6 +44,12 @@ alias kc='kubectl'
 export PIP_REQUIRE_VIRTUALENV=true
 
 
+##########
+# MyMint #
+##########
+export MYMINT_CONF_DIR=~/.mymint
+
+
 ##################
 # Source myfuncs #
 ##################
