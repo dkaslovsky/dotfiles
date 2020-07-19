@@ -1,0 +1,9 @@
+metabase_start() {
+	local cid=$(docker ps -aqf "name=^metabase$")
+	docker start "$cid" > /dev/null
+}
+
+metabase_stop() {
+        local cid=$(docker ps -aqf "name=^metabase$")
+	docker stop "$cid" > /dev/null
+}

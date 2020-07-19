@@ -57,6 +57,7 @@ export MYMINT_CONF_DIR=~/.mymint
 . ~/dotfiles/myfuncs/git/git_funcs
 . ~/dotfiles/myfuncs/gopass/gopass_funcs
 . ~/dotfiles/myfuncs/gpg_funcs
+. ~/dotfiles/myfuncs/metabase_funcs
 . ~/dotfiles/myfuncs/python/newvenv
 . ~/dotfiles/myfuncs/python/pycheck
 . ~/dotfiles/myfuncs/sdrive_funcs
