@@ -1,3 +1,7 @@
 function fullpath() {
 	echo "$(cd "$(dirname "$1")"; pwd -P)/$(basename "$1")"
 }
+
+function sum() {
+	awk 'BEGIN{s=0}{s+=$1}END{print s}'
+}
