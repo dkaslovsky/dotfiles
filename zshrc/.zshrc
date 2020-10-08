@@ -86,6 +86,9 @@ export PATH=$HOME/bin:$PATH
 # ZSH OPTS #
 ############
 
+# don't display trailing EOL mark (%) on partial line
+export PROMPT_EOL_MARK=''
+
 # history
 HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
