@@ -1,7 +1,11 @@
 # this will prune git branches that have been merged and allows you to edit them before deleting them
 # use :cq to exit vi with nonzero status to abort
 gitprune() {
-    git branch --merged master | grep -v master | grep -v '*' >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches; rm -f /tmp/merged-branches
+    if [ -z "$1" ]; then
+        echo "must specify merge branch"
+        return 1
+    fi
+    git branch --merged "$1" | grep -v master | grep -v '*' >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches; rm -f /tmp/merged-branches
 }
 
 # Git branch in prompt
