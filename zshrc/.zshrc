@@ -95,11 +95,11 @@ HISTFILE=$HOME/.zsh_history
 HISTSIZE=50000
 SAVEHIST=50000
 # share history across multiple zsh sessions
-#setopt SHARE_HISTORY
+setopt SHARE_HISTORY
 # append to history
 setopt APPEND_HISTORY
 # write history with timestamp
-#setopt EXTENDED_HISTORY
+setopt EXTENDED_HISTORY
 # verify previous command (!!)
 setopt HIST_VERIFY
 
