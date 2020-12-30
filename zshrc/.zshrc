@@ -110,6 +110,9 @@ setopt GLOB_COMPLETE
 #setopt CORRECT
 #setopt CORRECT_ALL
 
+# disable beep
+setopt nobeep
+
 # enable cmdline completion
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
@@ -126,6 +129,8 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 bindkey "^R" history-incremental-search-backward
 bindkey "^E" end-of-line
 bindkey "^A" beginning-of-line
+bindkey "[C" forward-word
+bindkey "[D" backward-word
 
 # in-place delete
 bindkey '^[[3~'  delete-char
