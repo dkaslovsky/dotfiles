@@ -54,4 +54,4 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+au BufNewFile,BufRead /private/**/gopass** setlocal noswapfile nobackup noundofile
