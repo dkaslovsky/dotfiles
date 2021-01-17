@@ -50,6 +50,12 @@ export PIP_REQUIRE_VIRTUALENV=true
 export MYMINT_CONF_DIR=~/.mymint
 
 
+############
+# textnote #
+############
+export TEXTNOTE_DIR=~/.textnote
+
+
 ##################
 # Source myfuncs #
 ##################
