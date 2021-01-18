@@ -61,6 +61,7 @@ export TEXTNOTE_DIR=~/.textnote
 ##################
 . ~/dotfiles/myfuncs/cmdline_funcs
 . ~/dotfiles/myfuncs/git/git_funcs
+. ~/dotfiles/myfuncs/go/gotesttemplate
 . ~/dotfiles/myfuncs/gopass/gopass_funcs
 . ~/dotfiles/myfuncs/gpg_funcs
 . ~/dotfiles/myfuncs/metabase_funcs
