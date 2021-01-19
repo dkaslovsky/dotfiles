@@ -29,7 +29,7 @@ export _gopass_custom_config=$HOME/dotfiles/myfuncs/gopass/gopass_config
 # GPG #
 #######
 export GPG_TTY=$(tty)
-alias glock='gpgconf --kill gpg-agent'
+alias gpglock='gpgconf --kill gpg-agent'
 
 
 #######
@@ -54,6 +54,7 @@ export MYMINT_CONF_DIR=~/.mymint
 # textnote #
 ############
 export TEXTNOTE_DIR=~/.textnote
+alias tn='textnote'
 
 
 #######################
