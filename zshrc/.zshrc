@@ -56,19 +56,19 @@ export MYMINT_CONF_DIR=~/.mymint
 export TEXTNOTE_DIR=~/.textnote
 
 
-##################
-# Source myfuncs #
-##################
-. ~/dotfiles/myfuncs/cmdline_funcs
-. ~/dotfiles/myfuncs/git/git_funcs
-. ~/dotfiles/myfuncs/go/gotesttemplate
-. ~/dotfiles/myfuncs/gopass/gopass_funcs
-. ~/dotfiles/myfuncs/gpg_funcs
-. ~/dotfiles/myfuncs/metabase_funcs
-. ~/dotfiles/myfuncs/mymint_funcs
-. ~/dotfiles/myfuncs/python/newvenv
-. ~/dotfiles/myfuncs/python/pycheck
-. ~/dotfiles/myfuncs/sdrive_funcs
+#######################
+# Source custom funcs #
+#######################
+. ~/dotfiles/funcs/cmdline
+. ~/dotfiles/funcs/git/git_funcs
+. ~/dotfiles/funcs/go/gotesttemplate
+. ~/dotfiles/funcs/gopass/gopass_funcs
+. ~/dotfiles/funcs/gpg
+. ~/dotfiles/funcs/metabase
+. ~/dotfiles/funcs/mymint
+. ~/dotfiles/funcs/python/newvenv
+. ~/dotfiles/funcs/python/pycheck
+. ~/dotfiles/funcs/sdrive
 
 if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
