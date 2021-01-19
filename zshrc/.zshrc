@@ -25,7 +25,7 @@ alias cdgodk="cd ${GOPATH}/src/github.com/dkaslovsky"
 ##########
 # Gopass #
 ##########
-export _gopass_custom_config=$HOME/dotfiles/myfuncs/gopass/gopass_config
+export _gopass_custom_config=$HOME/dotfiles/funcs/gopass/gopass_config
 
 
 #######
