@@ -4,10 +4,17 @@ filetype plugin indent on
 syntax on
 set encoding=utf-8
 
-set clipboard=unnamedplus
 set shell=/bin/zsh
-
+ 
+"use jk for escape
 inoremap jk <ESC>
+
+"clipboard
+if system('uname -s') == "Darwin\n"
+    set clipboard=unnamed "macos
+else
+    set clipboard=unnamedplus "linux
+endif
 
 set modelines=0 "don't read modelines
 
