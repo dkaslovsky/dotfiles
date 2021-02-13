@@ -6,8 +6,8 @@ set encoding=utf-8
 
 set shell=/bin/zsh
  
-"use jk for escape
-inoremap jk <ESC>
+"remapeescape
+inoremap ;; <ESC>
 
 "clipboard
 if system('uname -s') == "Darwin\n"
@@ -34,7 +34,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-nnoremap jk :noh<CR><CR>
+nnoremap ;; :noh<CR><CR>
 
 set number
 "set relativenumber
