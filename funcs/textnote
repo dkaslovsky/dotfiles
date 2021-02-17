@@ -1,0 +1,4 @@
+latesttn() {
+    ls -l $TEXTNOTE_DIR | grep -v 'archive' | awk '{print $9}' | sort -r | head -n 1 | cut -f 1 -d '.'
+}
+

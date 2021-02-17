@@ -64,8 +64,8 @@ alias tn='textnote'
 # Source custom funcs #
 #######################
 . ~/dotfiles/funcs/cmdline
-. ~/dotfiles/funcs/git/git_funcs
-. ~/dotfiles/funcs/go/gotesttemplate
+. ~/dotfiles/funcs/git
+. ~/dotfiles/funcs/go
 . ~/dotfiles/funcs/gopass/gopass_funcs
 . ~/dotfiles/funcs/gpg
 . ~/dotfiles/funcs/metabase
@@ -73,6 +73,7 @@ alias tn='textnote'
 . ~/dotfiles/funcs/python/newvenv
 . ~/dotfiles/funcs/python/pycheck
 . ~/dotfiles/funcs/sdrive
+. ~/dotfiles/funcs/textnote
 
 if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
