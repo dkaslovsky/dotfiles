@@ -73,6 +73,7 @@ alias tn='textnote'
 . ~/dotfiles/funcs/python/newvenv
 . ~/dotfiles/funcs/python/pycheck
 . ~/dotfiles/funcs/sdrive
+. ~/dotfiles/funcs/textnote
 
 if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
