@@ -65,7 +65,7 @@ alias tn='textnote'
 #######################
 . ~/dotfiles/funcs/cmdline
 . ~/dotfiles/funcs/git/git_funcs
-. ~/dotfiles/funcs/go/gotesttemplate
+. ~/dotfiles/funcs/go
 . ~/dotfiles/funcs/gopass/gopass_funcs
 . ~/dotfiles/funcs/gpg
 . ~/dotfiles/funcs/metabase
