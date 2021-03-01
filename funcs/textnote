@@ -7,6 +7,6 @@ tnsync() {
         echo "TEXTNOTE_REMOTE_DIR not set"
         return 1
     fi
-    rsync "${TEXTNOTE_DIR}/*" "${TEXTNOTE_REMOTE_DIR}"
+    rsync ${TEXTNOTE_DIR}/* ${TEXTNOTE_REMOTE_DIR}
 }
 
