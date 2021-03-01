@@ -10,3 +10,7 @@ tnsync() {
     rsync ${TEXTNOTE_DIR}/* ${TEXTNOTE_REMOTE_DIR}
 }
 
+tnls() {
+    lsa ${TEXTNOTE_DIR}
+}
+
