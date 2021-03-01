@@ -56,8 +56,8 @@ export MYMINT_CONF_DIR=~/.mymint
 ############
 # textnote #
 ############
-export TEXTNOTE_DIR=~/.textnote
 alias tn='textnote'
+export TEXTNOTE_DIR=~/.textnote
 
 
 #######################
