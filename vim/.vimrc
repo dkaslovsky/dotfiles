@@ -34,7 +34,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-nnoremap ;; :noh<CR><CR>
+nnoremap ;; :noh<CR>
 
 set number
 "set relativenumber
