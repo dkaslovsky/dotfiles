@@ -20,6 +20,7 @@
     "go.formatTool": "goimports",
     "go.gopath": "~/Github/go",
     "go.inferGopath": false,
+    "go.lintTool": "golint",
     "python.formatting.provider": "none",
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
@@ -30,5 +31,6 @@
     "python.linting.pylintUseMinimalCheckers": false,
     "workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
-    "workbench.settings.useSplitJSON": true
+    "workbench.settings.useSplitJSON": true,
+    "window.zoomLevel": 0
 }
