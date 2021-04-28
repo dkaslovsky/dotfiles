@@ -23,7 +23,7 @@ parse_git_branch() {
 ######
 # Go #
 ######
-export GOPATH=$HOME/Github/go
+export GOPATH=$HOME/code/go
 
 
 #######

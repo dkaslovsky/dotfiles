@@ -15,7 +15,7 @@ alias gits='git status'
 ######
 # Go #
 ######
-export GOPATH=$HOME/Github/go
+export GOPATH=$HOME/code/go
 alias cdgo="cd ${GOPATH}"
 alias cdgosrc="cd ${GOPATH}/src"
 alias cdgogit="cd ${GOPATH}/src/github.com"

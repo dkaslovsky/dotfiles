@@ -18,7 +18,7 @@
     "go.autocompleteUnimportedPackages": true,
     "go.docsTool": "gogetdoc",
     "go.formatTool": "goimports",
-    "go.gopath": "~/Github/go",
+    "go.gopath": "~/code/go",
     "go.inferGopath": false,
     "go.lintTool": "golint",
     "python.formatting.provider": "none",
