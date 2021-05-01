@@ -115,6 +115,7 @@ export TEXTNOTE_DIR=~/.textnote
 #######################
 . ~/dotfiles/funcs/cmdline
 . ~/dotfiles/funcs/git/git_funcs
+. ~/dotfiles/funcs/github
 . ~/dotfiles/funcs/go
 . ~/dotfiles/funcs/gopass/gopass_funcs
 . ~/dotfiles/funcs/gpg

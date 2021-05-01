@@ -1,0 +1,10 @@
+github_download_stats() {
+    local url="https://api.github.com/repos/$1/$2/releases"
+    local tbl=$(curl -s $url | jq -r '.[].assets | .[] | .browser_download_url, .download_count' | sed '$!N;s/\n/ /' | sed -r 's|.*/(.*)/(.*)$|\1 \2|' | sed "s/$2_//" | sed -r 's/.exe//' | sort -r | column -t -s' ')
+
+    # get number of binaries for each release and assume that that number is the same for every release
+    local n=$(echo $tbl | awk '{print $1}' | sort | uniq -c | awk '{print $1}' | sort -nr | uniq | head -n 1)
+    
+    echo $tbl | awk -v n=$n '1; NR % n == 0 {print ""}'
+}
+
