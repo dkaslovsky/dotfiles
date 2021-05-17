@@ -32,5 +32,8 @@
     "workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "editor.renderFinalNewline": true,
+    "file.insertFinalNewline": true,
+    "file.trimFinalNewlines": true
 }
