@@ -198,3 +198,7 @@ bindkey "[D" backward-word
 # in-place delete
 bindkey '^[[3~'  delete-char
 
+# don't remove space after tab completion for these characters
+# https://unix.stackexchange.com/questions/174630/keep-the-space-after-completion-for-some-characters-in-zsh
+ZLE_SPACE_SUFFIX_CHARS=$'|&'
+
