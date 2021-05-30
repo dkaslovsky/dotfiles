@@ -70,8 +70,10 @@ export FZF_DEFAULT_OPTS="
 --bind 'ctrl-y:execute-silent(echo {+} | pbcopy)'
 "
 
-# optionally use fd
-FZF_USE_FD=true
+# optionally use fd or rg
+FZF_USE_FD=false
+FZF_USE_RG=true
+
 if $FZF_USE_FD; then
     export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git'"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -81,6 +83,22 @@ if $FZF_USE_FD; then
     }
     _fzf_compgen_dir() {
         fd --type d . "$1"
+    }
+fi
+
+if $FZF_USE_RG; then
+    export FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!.git'"
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND | xargs gdirname | sort | uniq"
+
+    _rg_default() {
+        rg --files --follow --hidden --glob '!.git'
+    }
+    _fzf_compgen_path() {
+        _rg_default
+    }
+    _fzf_compgen_dir() {
+        _rg_default | xargs gdirname | sort | uniq
     }
 fi
 
