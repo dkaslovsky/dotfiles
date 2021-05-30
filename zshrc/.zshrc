@@ -71,8 +71,8 @@ export FZF_DEFAULT_OPTS="
 "
 
 # optionally use fd or rg
-FZF_USE_FD=false
-FZF_USE_RG=true
+FZF_USE_FD=true
+FZF_USE_RG=false
 
 if $FZF_USE_FD; then
     export FZF_DEFAULT_COMMAND="fd --hidden --follow --exclude '.git'"
