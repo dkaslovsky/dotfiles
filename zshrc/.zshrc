@@ -87,18 +87,18 @@ if $FZF_USE_FD; then
 fi
 
 if $FZF_USE_RG; then
-    export FZF_DEFAULT_COMMAND="rg --files --follow --hidden --glob '!.git'"
+    export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
     export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND | xargs gdirname | sort | uniq"
 
-    _rg_default() {
-        rg --files --follow --hidden --glob '!.git'
+    _rg_cmd() {
+        rg --files --hidden --glob '!.git'
     }
     _fzf_compgen_path() {
-        _rg_default
+        _rg_cmd
     }
     _fzf_compgen_dir() {
-        _rg_default | xargs gdirname | sort | uniq
+        _rg_cmd | xargs gdirname | sort | uniq
     }
 fi
 
