@@ -78,34 +78,3 @@ gpcp() {
 	unset secret_path
 }
 
-# set gopass config from values specified in config file
-gpsetconf() {
-	local filename=$_gopass_custom_config
-	if [ ! -f $filename ]; then
-		echo "gopass config file [${filename}] not found"
-		return 1
-	fi
-
-	echo "about to set gopass config..."
-	while read -r fileline; do
-        	echo $fileline
-	done < ${filename}
-
-	echo ""
-	vared -p 'confirm [y/N]: ' -c yn
-	if [ $yn != 'y' ]; then
-        	unset yn
-		return 1
-	fi
-	unset yn
-
-	while read -r fileline; do
-		local line=($fileline)
-		gopass config $line[0] $(echo $line[1] | tr '\n' ' ') > /dev/null
-	done < ${filename}
-	unset fileline
-	
-	echo "done\n"
-	echo "---new gopass config---"
-	gopass config
-}
