@@ -144,6 +144,9 @@ export TEXTNOTE_DIR=~/.textnote
 . ~/dotfiles/funcs/sdrive
 . ~/dotfiles/funcs/textnote
 
+if [[ -d ~/dotfiles/private ]]; then
+	. ~/dotfiles/private/private
+fi
 if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
 fi
