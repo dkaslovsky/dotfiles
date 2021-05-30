@@ -78,3 +78,8 @@ gpcp() {
 	unset secret_path
 }
 
+# generate using symbols and copy to clipboard
+gpgen() {
+    gopass generate -s -c $1
+}
+
