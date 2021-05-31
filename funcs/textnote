@@ -19,3 +19,10 @@ tncat() {
     cat "${TEXTNOTE_DIR}/${latest}.txt"
 }
 
+tnarcat() {
+    local search=$1 
+    if [[ -z "$search" ]]; then
+        search="archive"
+    fi
+    \ls -d $TEXTNOTE_DIR/* | fzf -1 -q ${search} | xargs cat
+}
