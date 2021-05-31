@@ -17,7 +17,7 @@
     },
     "go.autocompleteUnimportedPackages": true,
     "go.docsTool": "gogetdoc",
-    "go.formatTool": "goimports",
+    "go.formatTool": "golangci-lint",
     "go.gopath": "~/code/go",
     "go.inferGopath": false,
     "go.lintTool": "golint",
