@@ -35,5 +35,6 @@
     "window.zoomLevel": 0,
     "editor.renderFinalNewline": true,
     "file.insertFinalNewline": true,
-    "file.trimFinalNewlines": true
+    "file.trimFinalNewlines": true,
+    "workbench.editor.enablePreview": false
 }
