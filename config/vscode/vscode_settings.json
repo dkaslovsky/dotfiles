@@ -21,6 +21,10 @@
     "go.gopath": "~/code/go",
     "go.inferGopath": false,
     "go.lintTool": "golint",
+    "go.lintFlags": [
+        "--config=~/.config/golangci/.golangci.yml",
+        "--exclude-use-default=false"
+    ],
     "python.formatting.provider": "none",
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
