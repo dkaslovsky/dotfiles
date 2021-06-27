@@ -2,14 +2,6 @@ tnlatest() {
     ls -l $TEXTNOTE_DIR | grep -v 'archive' | awk '{print $9}' | sort -r | head -n 1 | cut -f 1 -d '.'
 }
 
-tnsync() {
-    if [[ -z ${TEXTNOTE_REMOTE_DIR} ]]; then
-        echo "TEXTNOTE_REMOTE_DIR not set"
-        return 1
-    fi
-    rsync ${TEXTNOTE_DIR}/* ${TEXTNOTE_REMOTE_DIR}
-}
-
 tnls() {
     lsa ${TEXTNOTE_DIR}
 }
@@ -26,3 +18,8 @@ tnarcat() {
     fi
     \ls -d $TEXTNOTE_DIR/* | fzf -1 -q ${search} | xargs cat
 }
+
+tnsearch() {
+    rg -i $1 $TEXTNOTE_DIR
+}
+
