@@ -17,10 +17,14 @@
     },
     "go.autocompleteUnimportedPackages": true,
     "go.docsTool": "gogetdoc",
-    "go.formatTool": "golangci-lint",
+    "go.formatTool": "goimports",
+    // "go.useLanguageServer": true,
+    // "gopls": {
+    //     "formatting.gofumpt": true
+    // },
     "go.gopath": "~/code/go",
     "go.inferGopath": false,
-    "go.lintTool": "golint",
+    "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--config=~/.config/golangci/.golangci.yml",
         "--exclude-use-default=false"
@@ -40,5 +44,8 @@
     "editor.renderFinalNewline": true,
     "file.insertFinalNewline": true,
     "file.trimFinalNewlines": true,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    }
 }
