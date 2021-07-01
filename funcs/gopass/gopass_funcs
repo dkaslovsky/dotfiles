@@ -63,7 +63,7 @@ gpopen() {
 
 	# open url - relies on convention that url is on the second line and has the prefix "url: "
 	local url=$(gopass show --noparsing $secret_path | head -n 1 | sed "s/url: //")
-	open -na "Google Chrome" --args --new-window $url
+	open -na "$GOPASS_BROWSER" --args --new-window $url
 	# copy password
 	gopass -c $secret_path
 	unset secret_path
