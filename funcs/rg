@@ -1,0 +1,4 @@
+function rgf() {
+    rg --files $2 | rg -i $1
+}
+

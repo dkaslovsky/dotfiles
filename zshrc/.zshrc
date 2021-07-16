@@ -142,6 +142,7 @@ export TEXTNOTE_DIR=~/.textnote
 . ~/dotfiles/funcs/mymint
 . ~/dotfiles/funcs/python/newvenv
 . ~/dotfiles/funcs/python/pycheck
+. ~/dotfiles/funcs/rg
 . ~/dotfiles/funcs/sdrive
 . ~/dotfiles/funcs/textnote
 
