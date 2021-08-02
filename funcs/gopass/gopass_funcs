@@ -45,7 +45,7 @@ gpshow() {
     secret_path=$(gpget "$@") || { echo "$secret_path"; unset secret_path; return 1; }
 
     echo ""
-    gopass show "$secret_path"
+    gopass show -n "$secret_path"
     echo ""
 
 	unset secret_path
