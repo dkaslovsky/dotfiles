@@ -1,0 +1,38 @@
+ctsearch() {
+    rg -i -N $1 "$CALENDAR_TASKS_DIR/sources/"
+}
+
+ctls() {
+    ls "$CALENDAR_TASKS_DIR/sources/"
+}
+
+ctopen() {
+    local srcfile=$1
+    if [[ -z "$srcfile" ]]; then
+        local to_open=$(\ls -d $CALENDAR_TASKS_DIR/sources/* | fzf -1)
+        if [[ -z "$to_open" ]]; then
+            return 0
+        fi
+        vi $to_open
+        return 0
+    fi
+    if [[ "$srcfile" == "annual" ]]; then
+        vi "$CALENDAR_TASKS_DIR/sources/annual.txt"
+        return 0
+    fi
+    if [[ "$srcfile" == "monthly" ]]; then
+        vi "$CALENDAR_TASKS_DIR/sources/monthly.txt"
+        return 0
+    fi
+    if [[ "$srcfile" == "monthly_recurring" ]]; then
+        vi "$CALENDAR_TASKS_DIR/sources/monthly_recurring.txt"
+        return 0
+    fi
+    if [[ "$srcfile" == "weekly" ]]; then
+        vi "$CALENDAR_TASKS_DIR/sources/weekly.txt"
+        return 0
+    fi
+    echo "unrecognized calendar-tasks source file $1"
+    return 1
+}
+

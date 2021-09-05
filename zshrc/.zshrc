@@ -129,10 +129,17 @@ alias tn='textnote'
 export TEXTNOTE_DIR=~/.textnote
 
 
+##################
+# calendar-tasks #
+##################
+export CALENDAR_TASKS_DIR=~/.calendar-tasks
+alias ct="calendar-tasks --weekly $CALENDAR_TASKS_DIR/sources/weekly.txt --monthly $CALENDAR_TASKS_DIR/sources/monthly.txt --multi $CALENDAR_TASKS_DIR/sources/monthly_recurring.txt --multi $CALENDAR_TASKS_DIR/sources/annual.txt"
+
 #######################
 # Source custom funcs #
 #######################
 . ~/dotfiles/funcs/cmdline
+. ~/dotfiles/funcs/calendartasks
 . ~/dotfiles/funcs/git/git_funcs
 . ~/dotfiles/funcs/github
 . ~/dotfiles/funcs/go
