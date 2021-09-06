@@ -133,8 +133,11 @@ export TEXTNOTE_DIR=~/.textnote
 # calendar-tasks #
 ##################
 export CALENDAR_TASKS_DIR=~/.calendar-tasks
-alias ct="calendar-tasks --weekly $CALENDAR_TASKS_DIR/sources/weekly.txt --monthly $CALENDAR_TASKS_DIR/sources/monthly.txt --multi $CALENDAR_TASKS_DIR/sources/monthly_recurring.txt --multi $CALENDAR_TASKS_DIR/sources/annual.txt"
-alias ctw="ct -d 7"
+export CALENDAR_TASKS_WEEKLY_SOURCES="$CALENDAR_TASKS_DIR/sources/weekly.txt"
+export CALENDAR_TASKS_MONTHLY_SOURCES="$CALENDAR_TASKS_DIR/sources/monthly.txt"
+export CALENDAR_TASKS_MULTIDATE_SOURCES="$CALENDAR_TASKS_DIR/sources/monthly_recurring.txt,$CALENDAR_TASKS_DIR/sources/annual.txt"
+alias ct="calendar-tasks"
+
 
 #######################
 # Source custom funcs #
