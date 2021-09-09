@@ -135,7 +135,7 @@ export TEXTNOTE_DIR=~/.textnote
 export CALENDAR_TASKS_DIR=~/.calendar-tasks
 export CALENDAR_TASKS_WEEKLY_SOURCES="$CALENDAR_TASKS_DIR/sources/weekly.txt"
 export CALENDAR_TASKS_MONTHLY_SOURCES="$CALENDAR_TASKS_DIR/sources/monthly.txt"
-export CALENDAR_TASKS_MULTIDATE_SOURCES="$CALENDAR_TASKS_DIR/sources/monthly_recurring.txt,$CALENDAR_TASKS_DIR/sources/annual.txt"
+export CALENDAR_TASKS_ANNUAL_SOURCES="$CALENDAR_TASKS_DIR/sources/annual.txt,$CALENDAR_TASKS_DIR/sources/annual_multiple.txt"
 alias ct="calendar-tasks"
 
 
