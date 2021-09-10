@@ -22,7 +22,10 @@ ctopen() {
 
 ctadd() {
     to_open=$(ctfind) || { unset to_open; return 1; }
-    echo $1 >> $to_open
+    for i in "$@"
+    do
+        echo "$i" >> $to_open
+    done
     unset to_open
 }
 
