@@ -6,12 +6,27 @@ ctls() {
     ls "$CALENDAR_TASKS_DIR/sources/"
 }
 
-ctopen() {
-    local to_open=$(\ls -d $CALENDAR_TASKS_DIR/sources/* | fzf -1)
-    if [[ -z "$to_open" ]]; then
-       return 1
+ctfind() {
+    local found=$(\ls -d $CALENDAR_TASKS_DIR/sources/* | fzf -1)
+    if [[ -z "$found" ]]; then
+        return 1
     fi
+    echo "$found"
+}
+
+ctopen() {
+    to_open=$(ctfind) || { unset to_open; return 1; }
     vi $to_open
-    return 0
+    unset to_open
+}
+
+ctadd() {
+    to_open=$(ctfind) || { unset to_open; return 1; }
+    echo $1 >> $to_open
+    unset to_open
+}
+
+cteom() {
+    cat "$CALENDAR_TASKS_DIR/end_of_month/end_of_month.txt"
 }
 
