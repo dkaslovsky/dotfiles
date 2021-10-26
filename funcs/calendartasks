@@ -33,3 +33,21 @@ cteom() {
     cat "$CALENDAR_TASKS_DIR/end_of_month/end_of_month.txt"
 }
 
+ctprune() {
+    ts=$(gdate -d "$1" +"%s") || { unset ts; return 1; }
+    if [ $ts -le 0 ]; then
+        echo "invalid timestamp"
+        unset ts
+        return 1
+    fi
+
+    local orig="$CALENDAR_TASKS_SINGLE_SOURCES"    
+    local to_prune=$(paste -d " " <(cat "$orig" | cut -d: -f 1 | xargs -I {} gdate -d {} +"%s") "$orig" | sort -n)
+    local pruned=$(echo $to_prune | awk -v ts="$ts" -F, '$0 > ts' | cut -d " " -f 2-)
+
+    diff <(echo $to_prune | cut -d " " -f 2-) <(echo $pruned) | grep '^< *' | sed 's/< //g' > "$CALENDAR_TASKS_DIR/sources/.deleted_single_tasks"
+    echo $pruned > "$orig"
+
+    unset ts
+}
+

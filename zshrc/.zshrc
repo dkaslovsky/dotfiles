@@ -136,6 +136,7 @@ export CALENDAR_TASKS_DIR=~/.calendar-tasks
 export CALENDAR_TASKS_WEEKLY_SOURCES="$CALENDAR_TASKS_DIR/sources/weekly.txt"
 export CALENDAR_TASKS_MONTHLY_SOURCES="$CALENDAR_TASKS_DIR/sources/monthly.txt"
 export CALENDAR_TASKS_ANNUAL_SOURCES="$CALENDAR_TASKS_DIR/sources/annual.txt,$CALENDAR_TASKS_DIR/sources/annual_multiple.txt"
+export CALENDAR_TASKS_SINGLE_SOURCES="$CALENDAR_TASKS_DIR/sources/single.txt"
 alias ct="calendar-tasks"
 
 
