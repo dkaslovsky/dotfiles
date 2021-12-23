@@ -1,3 +1,5 @@
+export BROWSER='Brave Browser'
+
 ######
 # ls #
 ######
@@ -26,7 +28,7 @@ alias cdgodk="cd ${GOPATH}/src/github.com/dkaslovsky"
 # Gopass #
 ##########
 export _gopass_custom_config=$HOME/dotfiles/funcs/gopass/gopass_config
-export GOPASS_BROWSER='Brave Browser'
+export GOPASS_BROWSER="${BROWSER}"
 
 
 #######
@@ -143,6 +145,7 @@ alias ct="calendar-tasks"
 #######################
 # Source custom funcs #
 #######################
+. ~/dotfiles/funcs/browser
 . ~/dotfiles/funcs/cmdline
 . ~/dotfiles/funcs/calendartasks
 . ~/dotfiles/funcs/git/git_funcs

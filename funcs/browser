@@ -1,0 +1,10 @@
+function opentabs() {
+    local window_arg="--new-window"
+    local urls=($(echo "$1" | tr '\n' ' '))
+    for url in $urls
+    do
+        open -na "$BROWSER" --args "$window_arg" $url
+        window_arg=""
+    done
+}
+
