@@ -1,6 +1,9 @@
-function opentabs() {
+# open newline separated urls from clipboard
+function cbtabs() {
     local window_arg="--new-window"
-    local urls=($(echo "$1" | tr '\n' ' '))
+
+    #local urls=($(echo "$1" | tr '\n' ' '))
+    local urls=($(echo `pbpaste`))
     for url in $urls
     do
         open -na "$BROWSER" --args "$window_arg" $url
