@@ -1,13 +1,26 @@
 # open newline separated urls from clipboard
-function cbtabs() {
-    local window_arg="--new-window"
+function tbs() {
 
     #local urls=($(echo "$1" | tr '\n' ' '))
     local urls=($(echo `pbpaste`))
     for url in $urls
     do
+        echo $url
+    done
+    echo "Press enter to open tabs"
+    read -n 1 key
+    if [[ $key != "" ]]; then
+        unset key
+        return 1
+    fi
+    unset key
+
+    local window_arg="--new-window"
+    for url in $urls
+    do
         open -na "$BROWSER" --args "$window_arg" $url
         window_arg=""
+        sleep 0.25
     done
 }
 
