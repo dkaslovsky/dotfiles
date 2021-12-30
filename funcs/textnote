@@ -23,3 +23,7 @@ tnsearch() {
     rg -i $1 $TEXTNOTE_DIR
 }
 
+tnnew() {
+    tn open -s TODO -xx
+}
+
