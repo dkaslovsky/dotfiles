@@ -18,11 +18,11 @@
     },
     "go.autocompleteUnimportedPackages": true,
     "go.docsTool": "gogetdoc",
-    "go.formatTool": "goimports",
-    // "go.useLanguageServer": true,
-    // "gopls": {
-    //     "formatting.gofumpt": true
-    // },
+    // "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true
+    },
     "go.gopath": "~/code/go",
     "go.inferGopath": false,
     "go.lintTool": "golangci-lint",
