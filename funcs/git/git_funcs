@@ -16,9 +16,11 @@ git_branch() {
         fi
 }
 
+# Select the branch to checkout using fzf
 gitcheckout() {
-    local branch=$(git branch | fzf -1)
-    if [ ! z "$branch" ]; then
+    # xargs trims leading whitespace
+    local branch=$(git branch | fzf -1 | xargs | sed 's/^\* //')
+    if [ ! -z "$branch" ]; then
         git checkout "$branch"
     fi
 }
