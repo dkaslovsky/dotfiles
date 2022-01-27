@@ -15,3 +15,11 @@ git_branch() {
                 printf " [%s]" "$branch"
         fi
 }
+
+gitcheckout() {
+    local branch=$(git branch | fzf -1)
+    if [ ! z "$branch" ]; then
+        git checkout "$branch"
+    fi
+}
+
