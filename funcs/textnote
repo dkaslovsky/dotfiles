@@ -16,7 +16,7 @@ tnarcat() {
     if [[ -z "$search" ]]; then
         search="archive"
     fi
-    \ls -d $TEXTNOTE_DIR/* | fzf -1 -q ${search} | xargs cat
+    \ls -dt $TEXTNOTE_DIR/* | fzf -1 -q ${search} | xargs cat
 }
 
 tnsearch() {
