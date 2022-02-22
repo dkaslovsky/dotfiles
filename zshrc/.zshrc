@@ -181,7 +181,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ########
 # PATH #
 ########
-export PATH=$HOME/bin:$GOPATH/bin/:$PATH
+export PATH=$HOME/bin:$GOPATH/bin/:/opt/homebrew/bin:$PATH
 
 
 ############
