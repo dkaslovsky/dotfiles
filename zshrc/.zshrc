@@ -36,6 +36,7 @@ export GOPASS_BROWSER="${BROWSER}"
 #######
 export GPG_TTY=$(tty)
 alias gpglock='gpgconf --kill gpg-agent'
+defaults write org.gpgtools.common UseKeychain NO
 
 
 #######
