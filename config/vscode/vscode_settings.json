@@ -30,6 +30,7 @@
         "--config=~/.config/golangci/.golangci.yml",
         "--exclude-use-default=false"
     ],
+    "go.lintOnSave": "workspace",
     "python.formatting.provider": "none",
     "python.linting.enabled": true,
     "python.linting.flake8Args": [
