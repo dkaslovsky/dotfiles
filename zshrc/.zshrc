@@ -193,11 +193,16 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ########
 # PATH #
 ########
-if [ -d "/opt/homebrew/" ]; then
-    export PATH=$HOME/bin:$GOPATH/bin/:/opt/homebrew/bin:$PATH
-else
-    export PATH=$HOME/bin:$GOPATH/bin/:$PATH
+PTH=$HOME/bin:$GOPATH/bin
+if [ -d "/opt/homebrew" ]; then
+    PTH=$PTH:/opt/homebrew/bin
 fi
+if [ -d "/Applications/Postgres.app/Contents/Versions/latest" ]; then
+    PTH=$PTH:/Applications/Postgres.app/Contents/Versions/latest/bin
+fi
+export PATH=$PTH:$PATH
+unset PTH
+
 
 ############
 # ZSH OPTS #
