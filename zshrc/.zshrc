@@ -154,6 +154,12 @@ export CALENDAR_TASKS_SINGLE_SOURCES="$CALENDAR_TASKS_DIR/sources/single.txt"
 alias ct="calendar-tasks"
 
 
+###########
+# VS Code #
+###########
+alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code'
+
+
 #######################
 # Source custom funcs #
 #######################
