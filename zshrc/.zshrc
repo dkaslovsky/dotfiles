@@ -29,6 +29,7 @@ alias cdgodk="cd ${GOPATH}/src/github.com/dkaslovsky"
 ##########
 export _gopass_custom_config=$HOME/dotfiles/funcs/gopass/gopass_config
 export GOPASS_BROWSER="${BROWSER}"
+export GOPASS_NO_AUTOSYNC=true
 
 
 #######
