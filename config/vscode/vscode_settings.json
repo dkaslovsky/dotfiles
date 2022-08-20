@@ -1,5 +1,9 @@
 {
     "editor.formatOnSave": true,
+    "[postgres]": {
+        "editor.formatOnSave": false,
+        "editor.defaultFormatter": "bradymholt.pgformatter"
+    },
     "editor.minimap.enabled": true,
     "editor.multiCursorModifier": "ctrlCmd",
     "editor.rulers": [
@@ -42,7 +46,6 @@
     "workbench.colorTheme": "Monokai",
     "workbench.settings.editor": "json",
     "workbench.settings.useSplitJSON": true,
-    "window.zoomLevel": 0,
     "editor.renderFinalNewline": true,
     "file.insertFinalNewline": true,
     "file.trimFinalNewlines": true,
@@ -53,5 +56,8 @@
     "workbench.tree.indent": 25,
     "terminal.integrated.defaultLocation": "editor",
     "terminal.external.osxExec": "iTerm.app",
-    "terminal.integrated.defaultProfile.osx": "zsh"
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "window.zoomLevel": 1,
+    "vscode-postgres.defaultConnection": "rumble-local",
+    "vscode-postgres.defaultDatabase": "rumble-dev"
 }
