@@ -22,6 +22,7 @@ alias cdgo="cd ${GOPATH}"
 alias cdgosrc="cd ${GOPATH}/src"
 alias cdgogit="cd ${GOPATH}/src/github.com"
 alias cdgodk="cd ${GOPATH}/src/github.com/dkaslovsky"
+alias pprof='go tool pprof -http 127.0.0.1:9999'
 
 
 ##########
