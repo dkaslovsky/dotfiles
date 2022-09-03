@@ -61,4 +61,6 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
-au BufNewFile,BufRead /private/**/gopass** setlocal noswapfile nobackup noundofile
+" gopass - don't leak secrets - vim on MacOS
+autocmd BufNewFile,BufRead /private/**/gopass** setlocal noswapfile nobackup noundofile viminfo=""
+
