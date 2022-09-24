@@ -4,7 +4,7 @@ linters:
     - deadcode
     - errcheck
     - gosimple
-    - revive
+    #- revive
     - gosec
     - govet
     - ineffassign
