@@ -2,6 +2,7 @@ ln -s ~/dotfiles/zshrc/.zshrc ~/.zshrc
 ln -s ~/dotfiles/config/ipython/ipython_config.py ~/.ipython/profile_default/ipython_config.py
 ln -s ~/dotfiles/config/vim/.vimrc ~/.vimrc
 ln -s ~/dotfiles/config/golangci-lint/.golangci.yml ~/.config/golangci/.golangci.yml
+ln -s ~/dotfiles/config/sqlite/.sqliterc ~/.sqliterc
 
 # use either gpg-agent.conf.opt or gpg-agent.conf.usr depending on the directory for pinentry-mac
 ln -s ~/dotfiles/config/gpg/gpg-agent.conf.opt ~/.gnupg/gpg-agent.conf
