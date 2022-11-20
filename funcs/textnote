@@ -23,5 +23,10 @@ tnsearch() {
     rg -i $1 $TEXTNOTE_DIR
 }
 
+tntabs() {
+    tnsearch $1 | tail -n +2 | cut -d':' -f2- | sed 's/- //g' | pbcopy
+    tbs
+}
+
 alias tnnew='tn open -s TODO -xx'
 
