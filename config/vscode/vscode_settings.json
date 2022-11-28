@@ -20,6 +20,9 @@
         "**/*.pyc": true,
         "**/__pycache__": true
     },
+    "go.addTags": {
+        "options": "json"
+    },
     "go.autocompleteUnimportedPackages": true,
     "go.docsTool": "gogetdoc",
     // "go.formatTool": "goimports",
