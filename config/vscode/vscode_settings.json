@@ -21,7 +21,8 @@
         "**/__pycache__": true
     },
     "go.addTags": {
-        "options": "json"
+        "tags": "json",
+        "options": ""
     },
     "go.autocompleteUnimportedPackages": true,
     "go.docsTool": "gogetdoc",
