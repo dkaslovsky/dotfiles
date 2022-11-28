@@ -63,5 +63,6 @@
     "terminal.integrated.defaultProfile.osx": "zsh",
     "window.zoomLevel": 1,
     "vscode-postgres.defaultConnection": "rumble-local",
-    "vscode-postgres.defaultDatabase": "rumble-dev"
+    "vscode-postgres.defaultDatabase": "rumble-dev",
+    "pgFormatter.commaBreak": true
 }
