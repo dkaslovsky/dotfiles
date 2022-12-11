@@ -179,6 +179,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 . ~/dotfiles/funcs/python/pycheck
 . ~/dotfiles/funcs/rg
 . ~/dotfiles/funcs/sdrive
+. ~/dotfiles/funcs/sql/sql
 . ~/dotfiles/funcs/textnote
 
 if [[ -d ~/dotfiles/private ]]; then
