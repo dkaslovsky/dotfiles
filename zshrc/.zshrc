@@ -189,7 +189,7 @@ if [[ -d ~/dotfiles/work ]]; then
 	. ~/dotfiles/work/work
 fi
 if [[ -d ~/.work-private ]]; then
-    . ~/.work-private
+    . ~/.work-private/work-private
 fi
 
 
