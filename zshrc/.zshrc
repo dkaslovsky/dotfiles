@@ -28,9 +28,9 @@ alias pprof='go tool pprof -http 127.0.0.1:9999'
 ##########
 # Gopass #
 ##########
-export _gopass_custom_config=$HOME/dotfiles/funcs/gopass/gopass_config
 export GOPASS_BROWSER="${BROWSER}"
-export GOPASS_NO_AUTOSYNC=true
+# export _gopass_custom_config=$HOME/dotfiles/funcs/gopass/gopass_config
+# export GOPASS_NO_AUTOSYNC=true
 
 
 #######

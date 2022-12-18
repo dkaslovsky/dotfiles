@@ -1,0 +1,14 @@
+[core]
+	autoclip = true
+	autoimport = true
+	autosync = false
+	cliptimeout = 45
+	exportkeys = false
+	nopager = false
+	parsing = false
+	notifications = true
+	showsafecontent = true
+[age]
+	usekeychain = false
+[mounts]
+	path = ~/.password-store
