@@ -8,7 +8,11 @@ tnls() {
 
 tncat() {
     local latest=$(tnlatest)
-    cat "${TEXTNOTE_DIR}/${latest}.txt"
+    if [[ -z $1 ]]; then
+        cat "${TEXTNOTE_DIR}/${latest}.txt"
+        return
+    fi
+    cat "${TEXTNOTE_DIR}/${latest}.txt" | head -n $1
 }
 
 tnarcat() {
