@@ -9,7 +9,7 @@ set shell=/bin/zsh
 "remapeescape
 inoremap ;; <ESC>
 
-set timeoutlen=250 ttimeoutlen=0
+"set timeoutlen=250 ttimeoutlen=0
 
 "clipboard
 if system('uname -s') == "Darwin\n"
@@ -53,8 +53,10 @@ highlight LineNr ctermfg=grey
 
 "insert blank lines
 "https://vi.stackexchange.com/questions/3875/how-to-insert-a-newline-without-leaving-normal-mode
-nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
-nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+"nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
+"nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
+nnoremap <c-n> @="m`o\eg``"<cr>
+nnoremap <c-p> @="m`O\eg``"<cr>
 
 "set spell spelllang=en_us
 
