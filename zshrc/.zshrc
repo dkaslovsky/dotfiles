@@ -156,6 +156,12 @@ export CALENDAR_TASKS_SINGLE_SOURCES="$CALENDAR_TASKS_DIR/sources/single.txt"
 alias ct="calendar-tasks"
 
 
+#############
+# thread-safe
+#############
+export THREAD_SAFE_PATH=~/Documents/threads
+
+
 ###########
 # VS Code #
 ###########
