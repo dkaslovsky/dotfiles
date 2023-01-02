@@ -187,6 +187,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 . ~/dotfiles/funcs/sdrive
 . ~/dotfiles/funcs/sql/sql
 . ~/dotfiles/funcs/textnote
+. ~/dotfiles/funcs/threadsafe
 
 if [[ -d ~/dotfiles/private ]]; then
 	. ~/dotfiles/private/private

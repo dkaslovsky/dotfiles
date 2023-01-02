@@ -1,0 +1,12 @@
+threadfind() {
+    local found=$(\ls $THREAD_SAFE_PATH | fzf -1)
+    if [[ -z "$found" ]]; then
+        return 1
+    fi
+    echo "$found"
+}
+
+threadopen() {
+    local THREAD=$(threadfind)
+    open -na "$BROWSER" --args --new-window "file://$THREAD_SAFE_PATH/$THREAD/thread.html"
+}
