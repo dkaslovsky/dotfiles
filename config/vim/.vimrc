@@ -55,8 +55,8 @@ highlight LineNr ctermfg=grey
 "https://vi.stackexchange.com/questions/3875/how-to-insert-a-newline-without-leaving-normal-mode
 "nnoremap <silent> oo :<C-u>call append(line("."),   repeat([""], v:count1))<CR>
 "nnoremap <silent> OO :<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>
-nnoremap <c-n> @="m`o\eg``"<cr>
-nnoremap <c-p> @="m`O\eg``"<cr>
+nnoremap <c-p> @="m`o\eg``"<cr>
+nnoremap <c-n> @="m`O\eg``k"<cr>
 
 "set spell spelllang=en_us
 
