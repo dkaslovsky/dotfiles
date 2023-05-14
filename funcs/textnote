@@ -32,5 +32,30 @@ tntabs() {
     tbs
 }
 
-alias tnnew='tn open -s TODO -xx'
+tnrm() {
+    local date=$1
+    if [[ -z $date ]]; then
+        date=$(tnlatest)
+    fi
+    local tnfile="${TEXTNOTE_DIR}/${date}.txt"
 
+    if [[ ! -f "$tnfile" ]]; then
+        echo "File ${tnfile} not found"
+        return 1
+    fi
+
+    echo "Delete file: ${tnfile}\n"
+    cat $tnfile
+    echo ""
+    
+    local confirm
+    vared -p "Confirm delete [yn]: " -c confirm
+    if [[ $confirm != "y" ]]; then
+        echo "aborted"
+        return
+    fi
+    rm "$tnfile"
+    echo "Deleted ${tnfile}"
+}
+
+alias tnnew='tn open -s TODO -xx'
