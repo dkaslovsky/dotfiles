@@ -223,6 +223,14 @@ export PATH=$PTH:$PATH
 unset PTH
 
 
+#######
+# RTX #
+#######
+# must be called after setting PATH above
+eval "$(rtx activate zsh)"
+export RTX_USE_TOML=1
+
+
 ############
 # ZSH OPTS #
 ############
