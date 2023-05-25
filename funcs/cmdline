@@ -10,6 +10,10 @@ function sum() {
 	sed 's/ /\n/g' | awk 'BEGIN{s=0}{s+=$1}END{print s}'
 }
 
+function uuid() {
+    uuidgen | tr '[:upper:]' '[:lower:]'
+}
+
 function clock() {
     while :; do clear; date +'%I:%M %p' | sed 's/^0//'; sleep 10; done
 }
