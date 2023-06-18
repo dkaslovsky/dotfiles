@@ -174,6 +174,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 . ~/dotfiles/funcs/browser
 . ~/dotfiles/funcs/cmdline
 . ~/dotfiles/funcs/calendartasks
+. ~/dotfiles/funcs/jn
 . ~/dotfiles/funcs/git/git_funcs
 . ~/dotfiles/funcs/github
 . ~/dotfiles/funcs/go
