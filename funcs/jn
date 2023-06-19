@@ -1,5 +1,5 @@
 jn() {
-    open ~/Desktop/jn.dmg && cat ~/.jn | tr -d '\n' | pbcopy && sleep 5 && open /Volumes/jn/jn.txt
+    open ~/Desktop/jn.dmg && cat ~/.jn | tr -d '\n' | pbcopy && sleep 5 && open /Volumes/jn
 }
 
 jnclose() {
