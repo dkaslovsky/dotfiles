@@ -1,4 +1,5 @@
 [core]
+	autopush = false
 	autoclip = true
 	autoimport = true
 	autosync = false
