@@ -182,6 +182,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 . ~/dotfiles/funcs/gpg
 . ~/dotfiles/funcs/metabase
 . ~/dotfiles/funcs/mymint
+. ~/dotfiles/funcs/nav
 . ~/dotfiles/funcs/python/newvenv
 . ~/dotfiles/funcs/python/pycheck
 . ~/dotfiles/funcs/rg
