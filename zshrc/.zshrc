@@ -162,6 +162,12 @@ alias ct="calendar-tasks"
 export THREAD_SAFE_PATH=~/Documents/threads
 
 
+#######
+# nav #
+#######
+alias nav='nav --remap-esc ";;"'
+
+
 ###########
 # VS Code #
 ###########
