@@ -1,6 +1,5 @@
 [core]
 	autopush = false
-	autoclip = true
 	autoimport = true
 	autosync = false
 	cliptimeout = 45
@@ -8,8 +7,11 @@
 	nopager = false
 	parsing = false
 	notifications = true
-	showsafecontent = true
 [age]
 	usekeychain = false
 [mounts]
 	path = ~/.password-store
+[show]
+	safecontent = true
+[generate]
+	autoclip = true
