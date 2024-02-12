@@ -29,7 +29,8 @@ set tabstop=4
 set expandtab
 set smartindent
 set autoindent
-set shiftwidth=4
+set shiftwidth=2
+"set shiftround
 
 "search
 set hlsearch
