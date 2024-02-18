@@ -20,6 +20,12 @@ def parse_args() -> argparse.Namespace:
         required=True,
     )
     parser.add_argument(
+        '-p', '--publickey',
+        type=str,
+        default=False,
+        required=False,
+    )
+    parser.add_argument(
         '-o', '--outdir',
         type=str,
         required=True,
@@ -30,12 +36,20 @@ def parse_args() -> argparse.Namespace:
         default=False,
         required=False,
     )
+    parser.add_argument(
+        '-s', '--secondary',
+        action='store_true',
+        default=False,
+        required=False,
+    )
 
     args = parser.parse_args()
     return args
 
 
 def get_url(args: argparse.Namespace) -> str:
+    if args.secondary:
+        return f'https://calendar.google.com/calendar/ical/{args.publickey}%40group.calendar.google.com/private-{args.key}/basic.ics'
     return f'https://www.google.com/calendar/ical/{args.user}/private-{args.key}/basic.ics'
 
 
