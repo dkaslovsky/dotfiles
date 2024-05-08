@@ -12,6 +12,8 @@ ln -s ~/dotfiles/config/gpg/gpg-agent.conf.opt ~/.gnupg/gpg-agent.conf
 #ln -s ~/dotfiles/bash_profile/.bash_profile ~/.bash_profile
 #ln -s ~/dotfiles/config/yapf/style  ~/.config/yapf/style
 
+ln -s ~/dotfiles/private/.gitconfig ~/.gitconfig
+
 sudo mkdir -p /usr/local/share/zsh/site-functions
 sudo cp ~/bin/_gopass /usr/local/share/zsh/site-functions/_gopass
 rm -i ~/.zcompdump && compinit
