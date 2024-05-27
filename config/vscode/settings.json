@@ -1,0 +1,129 @@
+/*
+$ code --list-extensions
+eamodio.gitlens
+golang.go
+ms-python.black-formatter
+ms-python.debugpy
+ms-python.flake8
+ms-python.isort
+ms-python.mypy-type-checker
+ms-python.pylint
+ms-python.python
+ms-python.vscode-pylance
+njpwerner.autodocstring
+streetsidesoftware.code-spell-checker
+yzane.markdown-pdf
+*/
+{
+    "black-formatter.args": [
+        "--line-length=100"
+    ],
+    "cSpell.diagnosticLevel": "Information",
+    // https://github.com/streetsidesoftware/vscode-spell-checker/issues/107
+    "cSpell.languageSettings": [
+        {
+            "languageId": "python",
+            "includeRegExpList": [
+                "/#.*/",
+                "/('''|\"\"\")[^\\1]+?\\1/g",
+                "strings"
+            ]
+        },
+        {
+            "cSpell.languageSettings": [
+                {
+                    "languageId": "go",
+                    // Turn off compound words, because it is only checking strings.
+                    "allowCompoundWords": false,
+                    // Only check comments and strings
+                    "includeRegExpList": [
+                        "CStyleComment",
+                        "string"
+                    ],
+                    // Exclude imports, because they are also strings.
+                    "ignoreRegExpList": [
+                        // ignore mulltiline imports
+                        "import\\s*\\((.|[\r\n])*?\\)",
+                        // ignore single line imports
+                        "import\\s*.*\".*?\""
+                    ],
+                }
+            ]
+        }
+    ],
+    "editor.bracketPairColorization.enabled": true,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderFinalNewline": "on",
+    "editor.rulers": [
+        100
+    ],
+    "files.autoSave": "off",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.pyc": true,
+        "**/__pycache__": true,
+        "**/.mypy_cache": true
+    },
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "flake8.args": [
+        "--max-line-len=100"
+    ],
+    "gitlens.heatmap.locations": [
+        "gutter",
+        "overview",
+        "line"
+    ],
+    "go.addTags": {
+        "tags": "json",
+        "options": "",
+        // "options": "json=omitempty",
+        "promptForTags": false,
+        "transform": "snakecase",
+        "template": ""
+    },
+    // "[go]":{
+    //     "editor.insertSpaces": false,
+    //     "editor.formatOnSave": true,
+    //     "editor.codeActionsOnSave": {
+    //         "source.organizeImports": true
+    //     }
+    // },
+    "go.gopath": "~/code/go",
+    "go.inferGopath": false,
+    "go.lintFlags": [
+        "--config=~/.config/golangci/.golangci.yml",
+        "--exclude-use-default=false"
+    ],
+    "go.lintTool": "golangci-lint",
+    "go.useLanguageServer": true,
+    "gopls": {
+        "formatting.gofumpt": true,
+        "ui.semanticTokens": true
+    },
+    "isort.check": true,
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        // "editor.formatOnType": true,
+        "editor.formatOnSave": true
+    },
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Monokai",
+    "workbench.editor.enablePreview": false,
+    "workbench.settings.editor": "json",
+    "workbench.settings.useSplitJSON": true,
+    "workbench.tree.indent": 25
+}
+
