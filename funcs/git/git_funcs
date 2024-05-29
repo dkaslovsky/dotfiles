@@ -25,5 +25,14 @@ gitcheckout() {
     fi
 }
 
+# Check git status on dotfiles
+git_dotfiles() {
+  gstatus=$(git -C $HOME/dotfiles status -s)
+  if [ ! -z "$gstatus" ]; then
+        echo "(resync dotfiles)"
+  fi
+}
+
 alias gitl="git log --graph --date=format:'%Y-%m-%d-%H:%M' --pretty='format:%C(auto)%h %C(cyan)%ad %C(magenta)%an %C(auto)%s (%C(auto)%ar)'"
+
 

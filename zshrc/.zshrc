@@ -212,7 +212,7 @@ fi
 # Command Prompt #
 ##################
 setopt PROMPT_SUBST
-PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~]$(git_branch)%f) $ '
+PROMPT='%(?^%F{cyan}[%n@%m] [%2~]$(git_branch)%f^%F{red}[%n@%m] [%2~]$(git_branch)%f) $(git_dotfiles) $ '
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
