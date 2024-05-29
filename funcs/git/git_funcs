@@ -29,7 +29,7 @@ gitcheckout() {
 git_dotfiles() {
   gstatus=$(git -C $HOME/dotfiles status -s)
   if [ ! -z "$gstatus" ]; then
-        echo "(resync dotfiles)"
+        echo "(resync dotfiles) "
   fi
 }
 
