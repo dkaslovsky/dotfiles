@@ -41,6 +41,14 @@ alias gpglock='gpgconf --kill gpg-agent'
 defaults write org.gpgtools.common UseKeychain NO
 
 
+#####################
+# launchctl startup #
+#####################
+launchstartup() {
+    launchctl start com.dkas.bravenewwindowhotkey
+}
+
+
 #######
 # fzf #
 #######
