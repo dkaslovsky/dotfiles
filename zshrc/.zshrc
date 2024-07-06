@@ -44,6 +44,7 @@ defaults write org.gpgtools.common UseKeychain NO
 # tabgrab #
 ###########
 export TABGRAB_BROWSER="brave"
+export TABGRAB_BROWSER_ARGS="--profile-directory=Default"
 
 
 #####################
