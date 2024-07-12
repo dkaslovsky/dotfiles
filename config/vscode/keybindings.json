@@ -4,5 +4,10 @@
         "key": "shift+cmd+f",
         "command": "workbench.action.quickTextSearch",
         "when": "!searchViewletVisible && !terminalFocus"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     }
 ]
