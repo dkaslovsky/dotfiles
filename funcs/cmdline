@@ -1,3 +1,6 @@
+alias def='which'
+alias loc='whence -v'
+
 function mkcd() {
     [[ ! -z $1 ]] && mkdir -p $1 && cd $1
 }
