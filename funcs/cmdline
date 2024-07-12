@@ -22,7 +22,11 @@ function trls() {
     if [[ ! -z $1 ]]; then
         levels=$1
     fi
-    tree -aL $levels
+    local trDir="$@[-1]"
+    if [[ $1 == $trDir ]]; then
+        trDir="."
+    fi
+    tree -aL $levels $trDir
 }
 
 
