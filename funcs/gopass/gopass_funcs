@@ -32,7 +32,11 @@ gpfind() {
     local all_paths=$(gopass ls -f)
     for i in "$@"
     do
-        all_paths=$(echo "$all_paths" | grep -i "$i")
+        if [[ "$i" == \* ]]; then
+            all_paths=$(echo "$all_paths" | grep -i -v "${i:1}")
+        else
+            all_paths=$(echo "$all_paths" | grep -i "$i")
+        fi
     done
     echo "$all_paths"
 }
