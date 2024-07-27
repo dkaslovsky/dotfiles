@@ -15,3 +15,7 @@
 	safecontent = true
 [generate]
 	autoclip = true
+[recipients "hyphenate"]
+	hash = 019be232bc4417a2c26f85758b17333c62d260a7e7ef642c0bcc198e12a11954
+[mounts "hyphenate"]
+	path = /Users/dkas/hyphenate/.password-store
