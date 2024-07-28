@@ -12,8 +12,7 @@ bindings.json
 ln -s ~/dotfiles/config/gpg/gpg-agent.conf.opt ~/.gnupg/gpg-agent.conf
 #ln -s ~/dotfiles/config/gpg/gpg-agent.conf.usr ~/.gnupg/gpg-agent.conf
 
-#ln -s ~/dotfiles/bash_profile/.bash_profile ~/.bash_profile
-#ln -s ~/dotfiles/config/yapf/style  ~/.config/yapf/style
+ln -s ~/dotfiles/config/hotkeys/hotkeys ~/.config/hotkeys/hotkeys
 
 ln -s ~/dotfiles/private/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/work/.gitconfig ~/.gitconfig-work

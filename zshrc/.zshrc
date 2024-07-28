@@ -40,6 +40,7 @@ export GPG_TTY=$(tty)
 alias gpglock='gpgconf --kill gpg-agent'
 defaults write org.gpgtools.common UseKeychain NO
 
+
 ###########
 # tabgrab #
 ###########
@@ -47,11 +48,13 @@ export TABGRAB_BROWSER="brave"
 export TABGRAB_BROWSER_ARGS="--profile-directory=Default"
 
 
-#####################
-# launchctl startup #
-#####################
-launchstartup() {
-    launchctl start com.dkas.bravenewwindowhotkey
+#############################
+# hotkey launchctl startup #
+############################
+hotkeys_restart() {
+    launchctl stop com.dkas.hotkeys
+    sleep 2
+    launchctl start com.dkas.hotkeys
 }
 
 
