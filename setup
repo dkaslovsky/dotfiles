@@ -21,7 +21,7 @@ sudo mkdir -p /usr/local/share/zsh/site-functions
 sudo cp ~/bin/_gopass /usr/local/share/zsh/site-functions/_gopass
 rm -i ~/.zcompdump && compinit
 
-brew install gnupg2 pinentry-mac fzf jq fd ripgrep tree bat croc difftastic git-delta
+brew install gnupg2 pinentry-mac fzf jq fd ripgrep tree bat croc difftastic git-delta stats
 # optional for TeX
 # brew install brew install --cask macte
 
@@ -29,4 +29,5 @@ curl -o restic.bz2 -L https://github.com/restic/restic/releases/latest/<path_to_
 curl -o rclone.zip -L https://downloads.rclone.org/<path_to_darwin_binary>
 
 decrypt ./encrypted/private.gpg && mkdir ./private && mv encrypted/private private
+#decrypt ./encrypted/work.gpg && mkdir ./work && mv encrypted/work work
 
