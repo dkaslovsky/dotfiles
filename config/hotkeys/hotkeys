@@ -24,5 +24,18 @@
       "ModOption",
       "ModCmd"
     ]
+  },
+  {
+    "name":"Finder - open new window",
+    "command_name":"open",
+    "command_args":[
+      "-a", "Finder"
+    ],
+    "key":"KeyF",
+    "key_modifiers":[
+      "ModCtrl",
+      "ModOption",
+      "ModCmd"
+    ]
   }
 ]
