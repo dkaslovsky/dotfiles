@@ -37,5 +37,17 @@
       "ModOption",
       "ModCmd"
     ]
+  },
+  {
+    "name":"TextEdit - open new file",
+    "command_name":"/bin/sh",
+    "command_args":["-c", "ts=$(date '+%s'); touch ~/scratch/${ts}.txt && open ~/scratch/${ts}.txt; unset ts"],
+    "key":"KeyT",
+    "key_modifiers":[
+      "ModCtrl",
+      "ModOption",
+      "ModCmd"
+    ]
   }
 ]
+
