@@ -48,6 +48,15 @@ export TABGRAB_BROWSER="brave"
 export TABGRAB_BROWSER_ARGS="--profile-directory=Default"
 
 
+###############
+# scratch dir #
+###############
+export SCRATCH_DIR="${HOME}/scratch"
+if [ ! -d $SCRATCH_DIR ]; then
+    mkdir -p $SCRATCH_DIR
+fi
+
+
 #############################
 # hotkey launchctl startup #
 ############################
