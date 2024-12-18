@@ -17,6 +17,18 @@ function uuid() {
     uuidgen | tr '[:upper:]' '[:lower:]'
 }
 
+function randstr() {
+    local chars=24
+    if [[ ! -z $1 ]]; then
+        chars=$1
+    fi
+    if [[ $2 == "-a" ]]; then
+        cat /dev/urandom | base64 | tr -dc '0-9a-zA-Z' | head -c $chars
+        return
+    fi
+    cat /dev/urandom | base64 | head -c $chars
+}
+
 function trls() {
     local levels=2
     if [[ ! -z $1 ]]; then
