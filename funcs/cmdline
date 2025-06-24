@@ -41,6 +41,10 @@ function trls() {
     tree -aL $levels $trDir
 }
 
+function pathln() {
+    echo $PATH | tr : '\n'
+}
+
 
 #########
 # Clock #
