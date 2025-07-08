@@ -35,17 +35,6 @@
       "ModOption",
       "ModCmd"
     ]
-  },
-  {
-    "name":"TextEdit - open new file in work scratch dir",
-    "command_name":"/bin/sh",
-    "command_args":["-c", "ts=$(date '+%s'); touch ~/hyphenate/scratch/${ts}.txt && open ~/hyphenate/scratch/${ts}.txt; unset ts"],
-    "key":"KeyY",
-    "key_modifiers":[
-      "ModCtrl",
-      "ModOption",
-      "ModCmd"
-    ]
   }
 ]
 
