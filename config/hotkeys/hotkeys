@@ -13,19 +13,6 @@
     ]
   },
   {
-    "name":"Brave Browser - open new window for profile 5 (Hyphenate)",
-    "command_name":"open",
-    "command_args":[
-      "-na", "Brave Browser", "--args", "--new-window", "--profile-directory=Profile 5"
-    ],
-    "key":"KeyM",
-    "key_modifiers":[
-      "ModCtrl",
-      "ModOption",
-      "ModCmd"
-    ]
-  },
-  {
     "name":"Finder - open new window",
     "command_name":"open",
     "command_args":[
