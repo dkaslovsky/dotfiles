@@ -212,6 +212,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 . ~/dotfiles/funcs/go
 . ~/dotfiles/funcs/gopass/gopass_funcs
 . ~/dotfiles/funcs/gpg
+. ~/dotfiles/funcs/logitech
 . ~/dotfiles/funcs/metabase
 . ~/dotfiles/funcs/mymint
 . ~/dotfiles/funcs/nav
