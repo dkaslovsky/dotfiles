@@ -5,8 +5,7 @@ ln -s ~/dotfiles/config/gopass/config ~/.config/gopass/config
 ln -s ~/dotfiles/config/golangci-lint/.golangci.yml ~/.config/golangci/.golangci.yml
 ln -s ~/dotfiles/config/sqlite/.sqliterc ~/.sqliterc
 ln -s ~/dotfiles/config/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s ~/dotfiles/config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/key
-bindings.json
+ln -s ~/dotfiles/config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 # use either gpg-agent.conf.opt or gpg-agent.conf.usr depending on the directory for pinentry-mac
 ln -s ~/dotfiles/config/gpg/gpg-agent.conf.opt ~/.gnupg/gpg-agent.conf
