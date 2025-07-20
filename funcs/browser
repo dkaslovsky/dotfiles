@@ -24,3 +24,7 @@ function tbs() {
     done
 }
 
+function brave_bookmarks() {
+    cat ~/Library/Application\ Support/BraveSoftware/Brave-Browser/Default/Bookmarks
+}
+
