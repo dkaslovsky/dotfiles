@@ -2,6 +2,7 @@
 $ code --list-extensions
 eamodio.gitlens
 golang.go
+humao.rest-client
 ms-python.black-formatter
 ms-python.debugpy
 ms-python.flake8
