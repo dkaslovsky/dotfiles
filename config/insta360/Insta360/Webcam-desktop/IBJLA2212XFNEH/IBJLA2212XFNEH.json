@@ -1,0 +1,29 @@
+{
+    "id": "IBJLA2212XFNEH",
+    "ptz_info": [
+        {
+            "name: ": "Position 1",
+            "pitch: ": -53,
+            "roll: ": 0,
+            "video_mode: ": 0,
+            "yaw: ": -24,
+            "zoom: ": 100
+        },
+        {
+            "name: ": "Standing",
+            "pitch: ": -32,
+            "roll: ": 0,
+            "video_mode: ": 0,
+            "yaw: ": 0,
+            "zoom: ": 100
+        },
+        {
+            "name: ": "Main - 5.5in right",
+            "pitch: ": -33,
+            "roll: ": 0,
+            "video_mode: ": 0,
+            "yaw: ": 87,
+            "zoom: ": 115
+        }
+    ]
+}

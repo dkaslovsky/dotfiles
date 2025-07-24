@@ -6,6 +6,7 @@ ln -s ~/dotfiles/config/golangci-lint/.golangci.yml ~/.config/golangci/.golangci
 ln -s ~/dotfiles/config/sqlite/.sqliterc ~/.sqliterc
 ln -s ~/dotfiles/config/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -s ~/dotfiles/config/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s ~/dotfiles/config/insta360/Insta360 ~/Documents/Insta360
 
 # use either gpg-agent.conf.opt or gpg-agent.conf.usr depending on the directory for pinentry-mac
 ln -s ~/dotfiles/config/gpg/gpg-agent.conf.opt ~/.gnupg/gpg-agent.conf
