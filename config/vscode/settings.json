@@ -19,6 +19,7 @@ yzane.markdown-pdf
     "black-formatter.args": [
         "--line-length=100"
     ],
+    "claudeCode.preferredLocation": "panel",
     "cSpell.diagnosticLevel": "Information",
     // https://github.com/streetsidesoftware/vscode-spell-checker/issues/107
     "cSpell.languageSettings": [
