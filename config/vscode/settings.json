@@ -61,6 +61,7 @@ yzane.markdown-pdf
     "editor.rulers": [
         100
     ],
+    "extensions.autoUpdate": false,
     "files.autoSave": "off",
     "files.exclude": {
         "**/.git": true,
