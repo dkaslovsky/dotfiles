@@ -1,0 +1,4 @@
+ticktick_bak() {
+  ticktick-backup -cookie-file ~/.ticktick/cookie.txt -output ~/Documents/backups/ticktick/ticktick-bak.csv
+}
+

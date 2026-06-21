@@ -223,6 +223,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 . ~/dotfiles/funcs/sql/sql
 . ~/dotfiles/funcs/textnote
 . ~/dotfiles/funcs/threadsafe
+. ~/dotfiles/funcs/ticktick
 . ~/dotfiles/funcs/vscode
 
 if [[ -d ~/dotfiles/private ]]; then
