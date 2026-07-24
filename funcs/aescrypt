@@ -1,0 +1,5 @@
+drafts_decrypt() {
+  local src=$1
+  local ts=$(date +%s)
+  aescrypt-go decrypt -password-file ~/.aescrypt_drafts $src "$HOME/Desktop/draft_notes/$ts.txt"
+}

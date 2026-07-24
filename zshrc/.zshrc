@@ -203,6 +203,7 @@ alias code='/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/co
 #######################
 # Source custom funcs #
 #######################
+. ~/dotfiles/funcs/aescrypt
 . ~/dotfiles/funcs/browser
 . ~/dotfiles/funcs/cmdline
 . ~/dotfiles/funcs/calendartasks
